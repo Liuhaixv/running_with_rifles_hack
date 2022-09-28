@@ -90,7 +90,7 @@ int get_crosshair_status(HANDLE handle, DWORD gameBaseAddress) {
 //use simulate mouse£¬may be replaced with writing memory method
 void shoot(HANDLE handle, DWORD gameBaseAddress) {
 	mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);//°´ÏÂ×ó¼ü
-	Sleep(10);
+	Sleep(20);
 	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);//ËÉ¿ª×ó¼ü
 }
 
@@ -124,17 +124,13 @@ int main() {
 	while (true) {
 		Sleep(2);
 
-		//if (GetAsyncKeyState(VK_LMENU)) { // Left ALT
+		if (GetAsyncKeyState(VK_LMENU)) { // Left ALT
 			int crosshair_status = get_crosshair_status(processHandle, gameBaseAddress);
 			std::cout << "crosshair status: " << crosshair_status << std::endl;
 
 			if (crosshair_status == 1) {
 				shoot(processHandle, gameBaseAddress);
 			}
-		//}
-		//else {
-		//	continue;
-		//}
+		}
 	}
-
 }
