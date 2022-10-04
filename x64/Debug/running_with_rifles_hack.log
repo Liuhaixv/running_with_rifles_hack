@@ -1,0 +1,16 @@
+﻿  main.cpp
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(19,59): warning C4311: 'type cast': pointer truncation from 'BYTE *' to 'DWORD'
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(30,44): error C2039: 'string_view': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\vector(24): message : see declaration of 'std'
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(30,56): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(30,56): error C2146: syntax error: missing ')' before identifier 'targetProcess'
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(30,56): error C3646: 'targetProcess': unknown override specifier
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(30,69): error C2059: syntax error: ')'
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(41,10): error C2065: 'targetProcess': undeclared identifier
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(70,78): warning C4312: 'type cast': conversion from 'unsigned long' to 'LPVOID' of greater size
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(76,92): warning C4312: 'type cast': conversion from 'unsigned long' to 'LPVOID' of greater size
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(86,60): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(99,1): error C2144: syntax error: 'int' should be preceded by ';'
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(104,41): error C2664: 'DWORD get_porcId_by_name(const int)': cannot convert argument 1 from 'const char [13]' to 'const int'
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(104,27): message : There is no context in which this conversion is possible
+H:\Documents\GitHub\running_with_rifles_hack\main.cpp(30,14): message : see declaration of 'get_porcId_by_name'
