@@ -24,3 +24,5 @@ click to watch on Youtube
 点击跳转bilibili观看
 
 [![IMAGE ALT TEXT](https://github.com/Liuhaixv/running_with_rifles_hack/blob/main/img/header.jpg)](https://www.bilibili.com/video/BV15t4y1A7zR/)
+
+![](https://img.shields.io/github/downloads/Liuhaixv/running_with_rifles_hack/total)
