@@ -7,9 +7,11 @@
 2.Teleport to crosshair position with Left Shift key
 
 # Preview Video
-click to watch
+click to watch on Youtube
 
 [![IMAGE ALT TEXT](https://github.com/Liuhaixv/running_with_rifles_hack/blob/main/img/header.jpg)](https://youtu.be/nZA2RA42Hi8)
+
+---
 
 # 小兵步枪科技辅助
 适用于1.94版本，需要在OpenGL模式下运行，线上可用
@@ -18,3 +20,7 @@ click to watch
 
 1. 左Alt自动扳机
 2. 左Shift传送至准心处
+# 视频演示
+点击跳转bilibili观看
+
+[![IMAGE ALT TEXT](https://github.com/Liuhaixv/running_with_rifles_hack/blob/main/img/header.jpg)](https://www.bilibili.com/video/BV15t4y1A7zR/)
