@@ -104,6 +104,12 @@ private:
 	}
 };
 
+struct Vector3 {
+	float a;
+	float b;
+	float c;
+};
+
 struct Point {
 	float x;
 	float z;

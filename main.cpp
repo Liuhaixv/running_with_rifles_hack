@@ -37,6 +37,7 @@ int main() {
 	while (true) {
 		Sleep(2);
 
+		//Trigger Bot
 		if (GetAsyncKeyState(VK_LMENU)) { // Left ALT
 			int crosshair_status = client.get_crosshair_status();
 			std::cout << "crosshair status: " <<  crosshair_status << std::endl;
@@ -46,8 +47,27 @@ int main() {
 			}
 		}
 
+		//Teleport
 		if (GetAsyncKeyState(VK_LSHIFT)) {
 			client.teleport_to(client.get_crosshair_position());
+			Sleep(200);
+		}
+
+		//Change camera view
+		//-0.15 -0.85 0.5
+		static bool enabled_super_camera_view = false;
+		if (GetAsyncKeyState(VK_INSERT)) {//Insert
+			if (!enabled_super_camera_view) {
+				client.set_camera_angles(Vector3{ 0, -2.2, 0.0000001});
+				std::cout << "Setting camera angles to 0,-2.2,0.0000001" << std::endl;
+				enabled_super_camera_view = true;
+			}
+			else {
+				client.set_camera_angles(Vector3{ -0.15, -0.85, 0.5});
+				std::cout << "Setting camera angles to -0.15,-0.85,0.5" << std::endl;
+
+				enabled_super_camera_view = false;
+			}
 			Sleep(200);
 		}
 		

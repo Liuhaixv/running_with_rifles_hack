@@ -32,6 +32,17 @@ public :
 		mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);//ËÉ¿ª×ó¼ü
 	}
 
+	//³¬´óÊÓÒ° 0 -2.2 0.0000001
+	void set_camera_angles(Vector3 angles) {
+
+		DWORD offsetToGameBaseAdress = 0x4fb4d4;
+		int offsets[] = { 0x8, 0x24, 0x2c, 0x8, 0x94, 0x3c};
+
+		DWORD camera_angles_addr = memory.FindPointer(6, memory.gameBaseAddress + offsetToGameBaseAdress, offsets);
+
+		memory.write_mem(camera_angles_addr, angles);
+	}
+
 	void teleport_to(Point point) {
 		teleport_to(point.x, point.z, point.y);
 	}
