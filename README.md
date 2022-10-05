@@ -6,6 +6,8 @@
 
 2.Teleport to crosshair position with Left Shift key
 
+3.God view camera, increase view distance using INSERT key
+
 # Preview Video
 click to watch on Youtube
 
@@ -20,6 +22,7 @@ click to watch on Youtube
 
 1. 左Alt自动扳机
 2. 左Shift传送至准心处
+3. Insert键开启上帝视角，增大视野范围
 # 视频演示
 点击跳转bilibili观看
 
