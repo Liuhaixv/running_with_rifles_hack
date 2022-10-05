@@ -13,18 +13,6 @@ click to watch on Youtube
 
 [![IMAGE ALT TEXT](https://github.com/Liuhaixv/running_with_rifles_hack/blob/main/img/header.jpg)](https://youtu.be/nZA2RA42Hi8)
 
-# Preview gif
-1. ALT triggerbot
-![](https://github.com/Liuhaixv/running_with_rifles_hack/tree/main/img/ALT.gif)
-
-2. Shift Teleport
-![](https://github.com/Liuhaixv/running_with_rifles_hack/tree/main/img/SHIFT.gif)
-
-3. Insert god view
-![](https://github.com/Liuhaixv/running_with_rifles_hack/tree/main/img/INSERT.gif)
-
-
-
 ---
 
 # 小兵步枪科技辅助
