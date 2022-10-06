@@ -20,3 +20,16 @@ struct CameraView{
 33.999633700000004
 
 人物高度3.7820053100000024以下看不到
+
+电台坐标
+Radio Station Position
+<Address>"rwr_game.exe"+004FB4D4</Address>
+<Offsets>
+	<Offset>78</Offset>
+	<Offset>D18</Offset>
+	<Offset>8</Offset>
+	<Offset>8</Offset>
+	<Offset>2C</Offset>
+	<Offset>24</Offset>
+	<Offset>8</Offset>
+</Offsets>
