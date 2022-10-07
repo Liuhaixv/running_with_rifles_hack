@@ -6,7 +6,7 @@
 
 2.Teleport to crosshair position with Left Shift key
 
-3.God view camera, increase view distance using INSERT key
+3.God view camera, enable it with INSERT key, adjust camera height with PageUp and PageDown keys.
 
 # Preview Video
 click to watch on Youtube
@@ -22,7 +22,7 @@ click to watch on Youtube
 
 1. 左Alt自动扳机
 2. 左Shift传送至准心处
-3. Insert键开启上帝视角，增大视野范围
+3. Insert键开启上帝视角，增大视野范围,PageUp和PageDown键调节高度
 # 视频演示
 点击跳转bilibili观看
 
