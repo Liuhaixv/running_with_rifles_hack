@@ -63,6 +63,7 @@ int main() {
 				enabled_super_camera_view = true;
 			}
 			else {
+				//改为默认相机视角
 				client.set_camera_angles(Vector3{ -0.15, -0.85, 0.5});
 				std::cout << "Setting camera angles to -0.15,-0.85,0.5" << std::endl;
 
@@ -70,15 +71,18 @@ int main() {
 			}
 			Sleep(200);
 		}
-		
-		/*if (GetAsyncKeyState(VK_LSHIFT)) {
-			if (!LSHIFT_pressing) {
-				client.teleport_to(client.get_crosshair_position());
-				LSHIFT_pressing = true;
+
+		if (enabled_super_camera_view){
+			if (GetAsyncKeyState(VK_PRIOR)) {//PAGE UP key
+				Vector3 camera_angles = client.get_camera_angles();
+				client.set_camera_angles(Vector3{ camera_angles.a,camera_angles.b -0.05F, camera_angles.c});
+				Sleep(30);
+			}else if (GetAsyncKeyState(VK_NEXT)) {//PAGE DOWN key
+				Vector3 camera_angles = client.get_camera_angles();
+				client.set_camera_angles(Vector3{ camera_angles.a,camera_angles.b + 0.05F, camera_angles.c });
+				Sleep(30);
 			}
+
 		}
-		else {
-			LSHIFT_pressing = false;
-		}*/
 	}
 }
