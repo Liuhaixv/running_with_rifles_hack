@@ -1,5 +1,5 @@
 # running_with_rifles_hack
- hacks for RWR, works with version 1.94. **Must run game in OpenGL mode, not directx 9**
+ External hack for RWR, works with version 1.95. **Must run game in OpenGL mode, not directx 9**
 
 # Features
 1.TriggerBot with Left Alt key
@@ -15,8 +15,8 @@ click to watch on Youtube
 
 ---
 
-# 小兵步枪科技辅助
-适用于1.94版本，需要在OpenGL模式下运行，线上可用
+# 小兵步枪辅助
+适用于1.95版本，需要在OpenGL模式下运行，线上可用
 
 #功能
 
