@@ -50,7 +50,7 @@ int main() {
 		//Teleport
 		if (GetAsyncKeyState(VK_LSHIFT)) {
 			client.teleport_to(client.get_crosshair_position());
-			Sleep(200);
+			Sleep(5);
 		}
 
 		//Change camera view

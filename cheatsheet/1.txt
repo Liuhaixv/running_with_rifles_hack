@@ -1,0 +1,11 @@
+控制背包左侧栏实际操作的容器
+if *(_DWORD *)(this + 236) {
+    container_id = *(_DWORD *)(this + 28);
+} 
+
+container_id:
+    int(3) stash 储藏室
+    int(1) armory 军械库
+    int(0) ground 地面
+
+=========================================================

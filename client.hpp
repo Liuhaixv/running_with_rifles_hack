@@ -52,6 +52,17 @@ public :
 		memory.write_mem(camera_angles_addr, angles);
 	}
 
+	Point get_current_position() {
+		DWORD offsetToGameBaseAdress = 0x004FB4D4;
+		int playerPositonPoint_Offsets[] = { 0x2c, 0x20 ,0x24 ,0x20, 0x0, 0x34, 0xD18, 0x4, 0xB4 ,0x4 };
+
+		DWORD playerPositionPoint_addr = memory.FindPointer(10, memory.gameBaseAddress + offsetToGameBaseAdress, playerPositonPoint_Offsets);
+
+		TwoPoint twoPoint =  memory.read_mem<TwoPoint>(playerPositionPoint_addr);
+		return Point{ twoPoint.x1, twoPoint.z1, twoPoint.y1 };
+	}
+
+
 	void teleport_to(Point point) {
 		teleport_to(point.x, point.z, point.y);
 	}
