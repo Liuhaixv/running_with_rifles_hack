@@ -1,0 +1,52 @@
+v14_weapon_object + 192; 或 +220//武器name
+
+
+
+read_commonness(v43, v14_weapon_object + 100, v165);
+或
+read_commonness(v43, 武器name - 0x5c, v165);
+
+sub_52B900(*v38, v36, v14_weapon_object + 0xc0); //HUD filename
+
+========================================
+void __cdecl read_commonness(int a1_xml_element, int a2_weapon_commonness, int a3)
+
+    commonness = *(float *)(a2_weapon_commonness + 4);
+
+    in_stock = *(unsigned __int8 *)(a2_weapon_commonness + 8);
+        
+    can respawn with = *(unsigned __int8 *)(a2_weapon_commonness + 9);
+
+==================================
+void __cdecl sub_52B900(int a1, _DWORD *a2, int weapon_object)
+
+    hud_file_name =  weapon_object + 0x5c
+    //72
+    price = weapon_object + 0x88
+
+
+
+
+
+======
+
+
+
+
+
+
+
+
+
+
+
+
+
+"rwr_game.exe"+004FB4D4
+
+
+=====================
++0xd4->weapon ?
+武器内存偏移
+空间0x4C8 uint = 1224
+0x508？

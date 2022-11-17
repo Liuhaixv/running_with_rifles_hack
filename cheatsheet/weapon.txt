@@ -1,0 +1,20 @@
+var weapon;
+
+magazine_size 0x20
+
+commonness          = *(float *)(weapon + 0x64);
+in_stock            = *(unsigned __int8 *)(weapon + 0x6c);
+can_respawn_with    = *(unsigned __int8 *)(weapon + 0x6d);
+
+hud_file_name       = *(char *) (weapon_object + 0x120)
+price               = *(float *)(weapon_object + 0x144)
+
+int[2] speed_modifier = (weapon_object + 0x39c)[18] 
+
+=====================
+武器内存偏移
+空间0x4C8 uint
+  + 0x100 ??
+=0x5c8 = 1480
+
+0x509？

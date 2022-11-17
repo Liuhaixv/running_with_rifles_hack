@@ -1,0 +1,34 @@
+.text:00B07402 83 C4 14                                            add     esp, 14h
+.text:00B07405 8B C8                                               mov     ecx, eax
+.text:00B07407 E8 24 4C DC FF                                      call    get_debugmode
+.text:00B0740C 84 C0                                               test    al, al
+.text:00B0740E E9 9E 00 00 00                                      jmp     not_in_debugmode
+.text:00B0740E                                     ; ---------------------------------------------------------------------------
+.text:00B07413 00                                                  db    0
+.text:00B07414                                     ; ---------------------------------------------------------------------------
+.text:00B07414
+.text:00B07414                                     in_debugmode:
+.text:00B07414 8D 4C 24 18                                         lea     ecx, [esp+2B0h+var_298]
+.text:00B07418 E8 B3 F0 DC FF                                      call    sub_8D64D0
+.text:00B0741D 68 28 CD C8 00                                      push    offset aCanTConnectInD ; "Can't connect in debugmode"
+.text:00B07422 8D 4C 24 74                                         lea     ecx, [esp+2B4h+var_240]
+
+raw
+==================
+83 C4 14                                            add     esp, 14h
+.text:00B07405 8B C8                                               mov     ecx, eax
+.text:00B07407 E8 24 4C DC FF                                      call    get_debugmode
+.text:00B0740C 84 C0                                               test    al, al
+.text:00B0740E 0F 84 9D 00 00
+
+patched
+==================
+83 C4 14                                            add     esp, 14h
+.text:00B07405 8B C8                                               mov     ecx, eax
+.text:00B07407 E8 24 4C DC FF                                      call    get_debugmode
+.text:00B0740C 84 C0                                               test    al, al
+.text:00B0740E E9 9E 00 00 00
+
+
+83 C4 14 8B C8 E8 24 4C DC FF 84 C0 0F 84 9D
+83 C4 14 8B C8 E8 24 4C DC FF 84 C0 E9 9E 00

@@ -1,0 +1,246 @@
+void __thiscall connect_server_(GameConfigParams *this, int a2, char a3, char a4)
+{
+  char *v5; // edi
+  int v6; // eax
+  int v7; // eax
+  bool v9; // zf
+  GameConfigParams *GameConfigParams; // eax
+  _DWORD *v12; // eax
+  int v13; // eax
+  void (__thiscall *v14)(char *, GameConfigParams *); // eax
+  _BYTE *v15; // ecx
+  _BYTE *v16; // ecx
+  char v17; // bl
+  _DWORD *v18; // ecx
+  int v19; // eax
+  GameConfigParams *v20; // eax
+  void (__thiscall ***v21)(_DWORD, int); // ecx
+  int v22; // eax
+  void (__thiscall *v23)(char *, GameConfigParams *); // eax
+  float v25; // [esp+8h] [ebp-1A0h]
+  int v26; // [esp+8h] [ebp-1A0h]
+  float v27; // [esp+8h] [ebp-1A0h]
+  float v28; // [esp+8h] [ebp-1A0h]
+  char v29; // [esp+23h] [ebp-185h]
+  int v31[7]; // [esp+2Ch] [ebp-17Ch] BYREF
+  char v32[28]; // [esp+48h] [ebp-160h] BYREF
+  char v33[28]; // [esp+64h] [ebp-144h] BYREF
+  char v34[28]; // [esp+80h] [ebp-128h] BYREF
+  char v35[128]; // [esp+9Ch] [ebp-10Ch] BYREF
+  char v36[128]; // [esp+11Ch] [ebp-8Ch] BYREF
+  int v37; // [esp+1A4h] [ebp-4h]
+
+  _ESI = this;
+
+  if ( !this->unknown1[1670] )
+  {
+    std::ostringstream::ostringstream(v35, 2, 1);
+    v5 = 0;
+    v37 = 0;
+    sub_704240((int)v35, "start client");
+    std::string::string(v31, &unk_B6E6C3);
+    LOBYTE(v37) = 1;
+    v6 = std::ostringstream::str(v35, v34);
+    LOBYTE(v37) = 2;
+    log((int)v31, v6);
+    LOBYTE(v37) = 1;
+    std::string::~string(v34);
+    LOBYTE(v37) = 0;
+    std::string::~string(v31);
+    v37 = -1;
+    std::ostringstream::`vbase destructor'(v35);
+
+    if ( !_ESI->debugmode_D2D )
+    {
+      v7 = *(_DWORD *)&_ESI->unknown1[778];
+      if ( v7
+        && _RTDynamicCast(v7, 0, &Network::Host `RTTI Type Descriptor', &Network::Client `RTTI Type Descriptor', 0) )
+      {
+        sub_7E62F0((int)_ESI, 0, 1);
+      }
+      if ( a4 )
+      {
+        __asm
+        {
+          fldz
+          fcomp   dword ptr [esi+1630h]
+          fnstsw  ax
+        }
+        if ( !__SETP__(HIBYTE(_AX) & 5, 0) )
+        {
+          __asm
+          {
+            fld     dword ptr [esi+1630h]
+            fstp    [esp+1A0h+var_1A0]; float
+          }
+          sub_710A40(v25);
+        }
+      }
+      v9 = _ESI->unknown1[1875] == 0;
+      __asm
+      {
+        fld     ds:flt_B3CE74
+        fstp    dword ptr [esi+1630h]
+      }
+      *(float *)&_ESI->unknown1[2306] = _ET1;
+      if ( !v9 )
+      {
+        _ESI->unknown1[1875] = 0;
+        GameConfigParams = get_GameConfigParams(_ESI);
+
+        v12 = (_DWORD *)sub_720330(GameConfigParams);
+        sub_722150(v12);
+      }
+
+      if ( !*(_DWORD *)&_ESI->unknown1[778] )
+      {
+        sub_7B23D0((int)&_ESI->unknown1[1098], a2);
+        sub_7FA3D0((char *)&_ESI->unknown1[1138]);
+        v13 = operator new(528);
+        v37 = 3;
+        if ( v13 )
+          v5 = (char *)sub_993460(v13);
+        v14 = *(void (__thiscall **)(char *, GameConfigParams *))(*(_DWORD *)v5 + 4);
+        v37 = -1;
+        v14(v5, _ESI);
+        sub_98E2C0(v5, (int)&_ESI->unknown1[1098]);
+        v15 = *(_BYTE **)&_ESI->unknown0[3360];
+        *(_DWORD *)&_ESI->unknown1[778] = v5;
+        sub_8D7B50(v15, 0);
+        v16 = *(_BYTE **)&_ESI->unknown0[3364];
+        _ESI->unknown1[102] = 1;
+        sub_7FC320(v16, 0);
+        sub_7FC330(*(_BYTE **)&_ESI->unknown0[3364], 0);
+        sub_7AC000((int)_ESI, 1, 1);
+        sub_7AC1C0((int)_ESI, 0, 1);
+        sub_7AC240((int)_ESI, 0, 0);
+        sub_762770(*(_BYTE **)&_ESI->unknown0[3368], 0);
+        sub_7852F0(*(_BYTE **)&_ESI->unknown0[3368], 1);
+        (*(void (__thiscall **)(_DWORD))(**(_DWORD **)&_ESI->unknown1[778] + 8))(*(_DWORD *)&_ESI->unknown1[778]);
+
+        if ( a3 )
+        {
+          __asm { fld     ds:flt_B483C8 }
+          v29 = 1;
+          __asm { fstp    [esp+19Ch+var_184] }
+          while ( 1 )
+          {
+            std::string::string(v31, "connecting");
+            __asm
+            {
+              fld     ds:flt_B3CE74
+              fstp    [esp+1A0h+var_1A0]; float
+            }
+            v37 = 4;
+            sub_709A70(_ESI, (int)v31, v26);
+            v37 = -1;
+            std::string::~string(v31);
+            __asm
+            {
+              fld     ds:flt_B483B8
+              fstp    [esp+1A0h+var_1A0]
+            }
+            v17 = 0;
+            (*(void (__stdcall **)(_DWORD))(**(_DWORD **)&_ESI->unknown1[778] + 12))(LODWORD(v27));
+            if ( (*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)&_ESI->unknown1[778] + 60))(*(_DWORD *)&_ESI->unknown1[778]) )
+              goto LABEL_21;
+            v18 = *(_DWORD **)&_ESI->unknown1[778];
+            if ( v18 )
+            {
+              if ( sub_871D50(v18) == -1 && !sub_983B40(v5)[60] )
+                break;
+            }
+LABEL_23:
+            v20 = get_GameConfigParams(_ESI);
+            if ( sub_74D4A0(v20) )
+            {
+              v17 = 0;
+              v29 = 0;
+            }
+            __asm
+            {
+              fld     ds:flt_B483B8
+              fstp    [esp+1A0h+var_1A0]; float
+            }
+            sub_710A40(v28);
+            if ( v17 )
+            {
+              v21 = *(void (__thiscall ****)(_DWORD, int))&_ESI->unknown1[778];
+              v5 = 0;
+              if ( v21 )
+                (**v21)(v21, 1);
+              *(_DWORD *)&_ESI->unknown1[778] = 0;
+              v22 = operator new(528);
+              v37 = 8;
+              if ( v22 )
+                v5 = (char *)sub_993460(v22);
+              v23 = *(void (__thiscall **)(char *, GameConfigParams *))(*(_DWORD *)v5 + 4);
+              v37 = -1;
+              v23(v5, _ESI);
+              sub_98E2C0(v5, (int)&_ESI->unknown1[1098]);
+              *(_DWORD *)&_ESI->unknown1[778] = v5;
+              (*(void (__thiscall **)(char *))(*(_DWORD *)v5 + 8))(v5);
+            }
+            __asm
+            {
+              fld     [esp+19Ch+var_184]
+              fsub    ds:dbl_B48390
+              fstp    [esp+19Ch+var_184]
+              fldz
+              fcomp   [esp+19Ch+var_184]
+              fnstsw  ax
+            }
+            if ( (_AX & 0x4100) == 0 )
+              v29 = 0;
+            if ( !sub_983A20(*(int **)&_ESI->unknown1[778]) )
+              return;
+            if ( !v29 )
+            {
+              sub_7E62F0((int)_ESI, 0, 1);
+              (*(void (**)(void))(**(_DWORD **)&_ESI->unknown1[1950] + 68))();
+              return;
+            }
+          }
+          std::ostringstream::ostringstream(v36, 2, 1);
+          v37 = 5;
+          sub_704240((int)v36, "stopping connecting to a server");
+          std::string::string(v32, &unk_B6E6C3);
+          LOBYTE(v37) = 6;
+          v19 = std::ostringstream::str(v36, v33);
+          LOBYTE(v37) = 7;
+          log((int)v32, v19);
+          LOBYTE(v37) = 6;
+          std::string::~string(v33);
+          LOBYTE(v37) = 5;
+          std::string::~string(v32);
+          v37 = -1;
+          std::ostringstream::`vbase destructor'(v36);
+LABEL_21:
+          v17 = 1;
+          if ( sub_766280(*(_DWORD **)&_ESI->unknown1[778]) )
+          {
+            v17 = 0;
+            v29 = 0;
+          }
+          goto LABEL_23;
+        }
+      }
+    }
+  }
+}
+.text:007E6AF8 183 C4 08                                            add     esp, 8
+.text:007E6AFB 18D 4C 24 74                                         lea     ecx, [esp+19Ch+var_128] ; void *
+.text:007E6AFF 1C6 84 24 98 01 00 00 01                             mov     byte ptr [esp+19Ch+var_4], 1
+.text:007E6B07 1FF 15 A8 B1 B3 00                                   call    ds:__imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::string::~string(void)
+.text:007E6B0D 18D 4C 24 20                                         lea     ecx, [esp+19Ch+var_17C] ; void *
+.text:007E6B11 1C6 84 24 98 01 00 00 00                             mov     byte ptr [esp+19Ch+var_4], 0
+.text:007E6B19 1FF 15 A8 B1 B3 00                                   call    ds:__imp_??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::string::~string(void)
+.text:007E6B1F 183 CD FF                                            or      ebp, 0FFFFFFFFh
+.text:007E6B22 18D 8C 24 90 00 00 00                                lea     ecx, [esp+19Ch+var_10C]
+.text:007E6B29 189 AC 24 98 01 00 00                                mov     [esp+19Ch+var_4], ebp
+.text:007E6B30 1FF 15 D4 B1 B3 00                                   call    ds:??_D?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ ; std::ostringstream::`vbase destructor'(void)
+.text:007E6B36 180 BE 2D 0D 00 00 00                                cmp     byte ptr [esi+0D2Dh], 0
+.text:007E6B3D 10F 85 E9 03 00 00                                   jnz     loc_7E6F2C
+
+80 BE 2D 0D 00 00 00 0F 85 E9 03 00 00
+80 BE 2D 0D 00 00 00 EB 04 E9 03 00 00

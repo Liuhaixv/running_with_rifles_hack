@@ -1,0 +1,1482 @@
+int __thiscall read_weapon(_DWORD *this, int xml_object, _DWORD *out_weapon_object)
+{
+  int *v3_this; // ebp
+  int specification; // esi
+  int v5; // eax
+  int v6; // edi
+  int v7; // eax
+  int v8; // eax
+  int v9; // eax
+  int v10; // eax
+  int v11; // eax
+  int v12; // eax
+  int v13; // eax
+  int v14_weapon_object; // edi
+  int v15; // eax
+  int v16; // ebp
+  int v17; // ebp
+  int v18; // eax
+  int v19; // eax
+  int v20; // esi
+  int v21; // esi
+  int has_tag; // eax
+  int v23; // esi
+  int v24; // eax
+  char v25; // al
+  int v26; // eax
+  int v27; // eax
+  int i; // esi
+  int v29; // ebp
+  float *v30; // eax
+  float *v31; // eax
+  int v32; // eax
+  int v33; // eax
+  int v34; // eax
+  int v35; // eax
+  _DWORD *v36; // ebp
+  int v37; // eax
+  int *v38; // esi
+  int v39; // eax
+  int v40; // ecx
+  int v41; // eax
+  int v42; // eax
+  int v43; // eax
+  int v44; // eax
+  int v45; // eax
+  int v46; // esi
+  int v47; // eax
+  int j; // esi
+  int v49; // eax
+  int v50; // ebp
+  unsigned __int8 (__cdecl *v51)(void **, const char *); // esi
+  int v52; // eax
+  int v53; // eax
+  int v54; // ecx
+  int *v55; // esi
+  int v56; // ebx
+  int v57; // eax
+  int *v58; // esi
+  int v59; // eax
+  int v60; // eax
+  int k; // esi
+  int v62; // ebp
+  int v63; // eax
+  int *v64; // ebp
+  int v65; // ebx
+  int v66; // eax
+  _DWORD *v67; // ebp
+  int m; // esi
+  int n; // esi
+  int v70; // eax
+  int result; // eax
+  int v72; // ebp
+  int v73; // ebx
+  _DWORD *v74; // esi
+  int *v75; // esi
+  unsigned int v76; // eax
+  unsigned int v77; // ecx
+  _DWORD *v78; // ebx
+  int v79; // ebp
+  int v80; // ebx
+  _DWORD *v81; // esi
+  int *v82; // esi
+  unsigned int v83; // eax
+  unsigned int v84; // ecx
+  _DWORD *v85; // ebx
+  int v86; // ebp
+  int v87; // ebx
+  _DWORD *v88; // esi
+  int *v89; // esi
+  unsigned int v90; // eax
+  unsigned int v91; // ecx
+  _DWORD *v92; // ebx
+  int v93; // ebp
+  int v94; // ebx
+  _DWORD *v95; // esi
+  int *v96; // esi
+  unsigned int v97; // eax
+  unsigned int v98; // ecx
+  _DWORD *v99; // ebx
+  int v100; // ebp
+  int v101; // ebx
+  _DWORD *v102; // esi
+  int *v103; // esi
+  unsigned int v104; // eax
+  unsigned int v105; // ecx
+  _DWORD *v106; // ebx
+  int v107; // ebp
+  int v108; // ebx
+  _DWORD *v109; // esi
+  int *v110; // esi
+  unsigned int v111; // eax
+  unsigned int v112; // ecx
+  _DWORD *v113; // ebx
+  int v114; // ebp
+  int v115; // ebx
+  _DWORD *v116; // esi
+  int *v117; // eax
+  int *v118; // esi
+  unsigned int v119; // ecx
+  unsigned int v120; // eax
+  _DWORD *v121; // ebx
+  int v122; // ebp
+  int v123; // ebx
+  _DWORD *v124; // esi
+  int *v125; // esi
+  unsigned int v126; // eax
+  unsigned int v127; // ecx
+  _DWORD *v128; // ebx
+  int v129; // ebp
+  int v130; // ebx
+  _DWORD *v131; // esi
+  int *v132; // esi
+  unsigned int v133; // eax
+  unsigned int v134; // ecx
+  _DWORD *v135; // ebx
+  int v136; // ebp
+  int v137; // ebx
+  _DWORD *v138; // esi
+  int *v139; // esi
+  unsigned int v140; // eax
+  unsigned int v141; // ecx
+  _DWORD *v142; // ebx
+  int v143; // ebp
+  int v144; // ebx
+  _DWORD *v145; // esi
+  int *v146; // esi
+  unsigned int v147; // eax
+  unsigned int v148; // ecx
+  _DWORD *v149; // ebx
+  int *v150; // esi
+  int v151; // eax
+  int v152; // eax
+  int v153; // eax
+  double v154; // [esp-18h] [ebp-6B8h]
+  double v155; // [esp-10h] [ebp-6B0h]
+  double v156; // [esp-Ch] [ebp-6ACh]
+  double v157; // [esp-8h] [ebp-6A8h]
+  double v158; // [esp-8h] [ebp-6A8h]
+  double v159; // [esp-8h] [ebp-6A8h]
+  double v160; // [esp-8h] [ebp-6A8h]
+  double v161; // [esp-4h] [ebp-6A4h]
+  double v162; // [esp-4h] [ebp-6A4h]
+  int v163; // [esp+0h] [ebp-6A0h]
+  float v164; // [esp+0h] [ebp-6A0h]
+  int v165; // [esp+0h] [ebp-6A0h]
+  int v166; // [esp+0h] [ebp-6A0h]
+  int v167; // [esp+0h] [ebp-6A0h]
+  bool *v168; // [esp+0h] [ebp-6A0h]
+  int v169[2]; // [esp+18h] [ebp-688h] BYREF
+  float v170; // [esp+20h] [ebp-680h]
+  float v171; // [esp+24h] [ebp-67Ch]
+  char v172; // [esp+2Bh] [ebp-675h]
+  double v173; // [esp+2Ch] [ebp-674h] BYREF
+  double v174; // [esp+38h] [ebp-668h] BYREF
+  int *v175_this; // [esp+40h] [ebp-660h]
+  char v176[28]; // [esp+44h] [ebp-65Ch] BYREF
+  double v177; // [esp+60h] [ebp-640h] BYREF
+  double X[21]; // [esp+68h] [ebp-638h] BYREF
+  char v179[1224]; // [esp+110h] [ebp-590h] BYREF
+  char v180[20]; // [esp+5D8h] [ebp-C8h] BYREF
+  int v181; // [esp+5ECh] [ebp-B4h]
+  void *v182[3]; // [esp+5F4h] [ebp-ACh] BYREF
+  void *v183; // [esp+600h] [ebp-A0h]
+  int v184; // [esp+604h] [ebp-9Ch]
+  int v185; // [esp+608h] [ebp-98h]
+  char v186[28]; // [esp+610h] [ebp-90h] BYREF
+  char v187[28]; // [esp+62Ch] [ebp-74h] BYREF
+  float v188; // [esp+648h] [ebp-58h]
+  float v189; // [esp+64Ch] [ebp-54h]
+  float v190; // [esp+650h] [ebp-50h]
+  float v191; // [esp+654h] [ebp-4Ch]
+  float v192; // [esp+658h] [ebp-48h]
+  float v193; // [esp+65Ch] [ebp-44h]
+  char v194[28]; // [esp+660h] [ebp-40h] BYREF
+  float v195; // [esp+67Ch] [ebp-24h]
+  float v196; // [esp+680h] [ebp-20h]
+  float v197; // [esp+684h] [ebp-1Ch]
+  float v198; // [esp+688h] [ebp-18h]
+  float v199; // [esp+68Ch] [ebp-14h]
+  int v200; // [esp+69Ch] [ebp-4h]
+
+  v3_this = this;
+  v175_this = this;
+  LODWORD(v177) = xml_object;
+  specification = read_from_xml((_DWORD *)xml_object, "specification");
+  if ( !*out_weapon_object )
+  {
+    if ( v3_this[6] )
+    {
+      v5 = *v3_this;
+      v169[0] = -1;
+      sub_428CC0((int)(v3_this + 1), v5 + 3480, v169);
+      v6 = v169[0];
+      if ( v169[0] >= 0 )
+      {
+        *out_weapon_object = *(_DWORD *)sub_4B6530(v169[0]);
+        v7 = ((_DWORD (__cdecl *)())sub_7425D0)();
+        v200 = 0;
+        sub_74C8D0(v7);
+        v200 = -1;
+        sub_4FF510(v179);
+        *(_DWORD *)(*out_weapon_object + 392) = v6;
+        std::ostringstream::ostringstream(X, 2, 1);
+        HIDWORD(v157) = "  reloading weapon key=";
+        LODWORD(v157) = X;
+        v200 = 1;
+        log(v157);
+        std::operator<<<char>(v8, v3_this + 1);
+        std::string::string(v180, &unk_87E6C3);
+        LOBYTE(v200) = 2;
+        v9 = std::ostringstream::str(X, v176);
+        LOBYTE(v200) = 3;
+        sub_41C850(v180, v9);
+        LOBYTE(v200) = 2;
+        std::string::~string(v176);
+        LOBYTE(v200) = 1;
+        std::string::~string(v180);
+        v200 = -1;
+        std::ostringstream::`vbase destructor(X);
+      }
+    }
+    if ( !*out_weapon_object )
+    {
+      v169[0] = (int)operator new(0x4C8u);
+      v200 = 4;
+      if ( v169[0] )
+        v10 = ((_DWORD (__cdecl *)())sub_7425D0)();
+      else
+        v10 = 0;
+      *out_weapon_object = v10;
+      *(_DWORD *)(v10 + 392) = (*(_DWORD *)(*v3_this + 3496) - *(_DWORD *)(*v3_this + 3492)) >> 2;
+      v200 = -1;
+      sub_581340(out_weapon_object);
+    }
+  }
+  std::ostringstream::ostringstream(X, 2, 1);
+  v163 = *(_DWORD *)(*out_weapon_object + 392);
+  HIDWORD(v158) = "  weapon index: ";
+  LODWORD(v158) = X;
+  v200 = 5;
+  log(v158);
+  std::ostream::operator<<(v11, v163);
+  std::string::string(v180, &unk_87E6C3);
+  LOBYTE(v200) = 6;
+  v12 = std::ostringstream::str(X, v176);
+  LOBYTE(v200) = 7;
+  sub_41C850(v180, v12);
+  LOBYTE(v200) = 6;
+  std::string::~string(v176);
+  LOBYTE(v200) = 5;
+  std::string::~string(v180);
+  v200 = -1;
+  std::ostringstream::`vbase destructor(X);
+  v13 = std::operator+<char>(v176, "weapon, ", *out_weapon_object + 396);
+  v200 = 8;
+  sub_419A70(v13, -1.0);
+  v200 = -1;
+  std::string::~string(v176);
+  v14_weapon_object = *out_weapon_object;
+  v172 = 0;
+  if ( specification )
+  {
+    if ( !sub_440250("retrigger_time", v169) )
+      *(float *)v14_weapon_object = *(double *)v169;
+    if ( !sub_440250("last_burst_retrigger_time", v169) )
+      *(float *)(v14_weapon_object + 4) = *(double *)v169;
+    if ( !sub_440250("accuracy_factor", v169) )
+      *(float *)(v14_weapon_object + 8) = *(double *)v169;
+    if ( !sub_440250("spread_range", v169) )
+      *(float *)(v14_weapon_object + 12) = *(double *)v169;
+    if ( !sub_440250("sustained_fire_grow_step", v169) )
+      *(float *)(v14_weapon_object + 16) = *(double *)v169;
+    if ( !sub_440250("sustained_fire_diminish_rate", v169) )
+      *(float *)(v14_weapon_object + 20) = *(double *)v169;
+    if ( !sub_440250("stance_accuracy_rate", v169) )
+      *(float *)(v14_weapon_object + 24) = *(double *)v169;
+    if ( !sub_440250("leave_crouch_accuracy_penalty", v169) )
+      *(float *)(v14_weapon_object + 28) = *(double *)v169;
+    sub_440210((int)"magazine_size", v14_weapon_object + 32);
+    sub_440210((int)"projectiles_per_shot", v14_weapon_object + 844);
+    if ( !sub_440250("kill_probability", v169) )
+    {
+      *(float *)v169 = *(double *)v169;
+      if ( *(float *)v169 >= 0.0 )
+      {
+        std::ostringstream::ostringstream(X, 2, 1);
+        HIDWORD(v161) = "WARNING, kill_probability defined in weapon specification, therefore loading default bullet spec";
+        LODWORD(v161) = X;
+        v200 = 9;
+        log(v161);
+        std::string::string(v180, &unk_87E6C3);
+        LOBYTE(v200) = 10;
+        v15 = std::ostringstream::str(X, v176);
+        LOBYTE(v200) = 11;
+        sub_41C780(v180, v15);
+        LOBYTE(v200) = 10;
+        std::string::~string(v176);
+        LOBYTE(v200) = 9;
+        std::string::~string(v180);
+        v200 = -1;
+        std::ostringstream::`vbase destructor(X);
+        v16 = sub_7492E0();
+        *(float *)(v16 + 172) = *(float *)v169;
+        LODWORD(v173) = v16;
+        if ( !sub_440250("kill_decay_start_time", v169) )
+          *(float *)(v16 + 176) = *(double *)v169;
+        if ( !sub_440250("kill_decay_end_time", v169) )
+          *(float *)(v16 + 180) = *(double *)v169;
+        *(_DWORD *)(v16 + 28) = (*(_DWORD *)(*v175_this + 3592) - *(_DWORD *)(*v175_this + 3588)) >> 2;
+        sub_581340(&v173);
+        *(_DWORD *)(v14_weapon_object + 644) = v16;
+        v3_this = v175_this;
+        v172 = 1;
+      }
+    }
+    std::string::string(v180, "can_shoot_standing");
+    v200 = 12;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 36));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "can_shoot_crouching");
+    v200 = 13;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 37));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "can_shoot_prone");
+    v200 = 14;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 38));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "suppressed");
+    v200 = 15;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 39));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "reload_one_at_a_time");
+    v200 = 16;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 44));
+    v200 = -1;
+    std::string::~string(v180);
+    if ( !sub_440250("character_rotation_speed_limit", v169) )
+      *(float *)(v14_weapon_object + 64) = *(double *)v169;
+    std::string::string(v180, "name");
+    v17 = *v3_this;
+    v200 = 17;
+    sub_5255B0(v17, specification, (int)v180, v14_weapon_object + 192, v14_weapon_object + 220);
+    v200 = -1;
+    std::string::~string(v180);
+    sub_440210((int)"class", v14_weapon_object + 40);
+    if ( !sub_440250("sight_range_modifier", v169) )
+      *(float *)(v14_weapon_object + 48) = *(double *)v169;
+    if ( !sub_440250("ai_sight_range_modifier", v169) )
+      *(float *)(v14_weapon_object + 60) = *(double *)v169;
+    if ( !sub_440250("projectile_speed", v169) )
+      *(float *)(v14_weapon_object + 608) = *(double *)v169;
+    sub_440210((int)"slot", v14_weapon_object + 388);
+    sub_440210((int)"burst_shots", v14_weapon_object + 52);
+    std::string::string(v180, "use_basic_muzzle_smoke_effect");
+    v200 = 18;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 56));
+    v200 = -1;
+    std::string::~string(v180);
+    if ( !sub_440250("barrel_offset", v169) )
+      *(float *)(v14_weapon_object + 860) = *(double *)v169;
+    std::string::string(v180, "barrel_offset_3d");
+    v200 = 19;
+    sub_41DB90(specification, v180, v14_weapon_object + 852);
+    v200 = -1;
+    std::string::~string(v180);
+    sub_525A00(specification, v14_weapon_object + 652);
+    std::string::string(v186, "spawn_instance_key");
+    v200 = 20;
+    std::string::string(v180, "spawn_instance_class");
+    LOBYTE(v200) = 21;
+    sub_5273D0(specification, (int)v180, (int)v186, (int *)(v14_weapon_object + 656), v14_weapon_object + 660);
+    LOBYTE(v200) = 20;
+    std::string::~string(v180);
+    v200 = -1;
+    std::string::~string(v186);
+    sub_440210((int)"untransform_count", v14_weapon_object + 708);
+    std::string::string(v180, "consume");
+    v200 = 22;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 692));
+    v200 = -1;
+    std::string::~string(v180);
+    if ( !sub_440250("range", v169) )
+      *(float *)(v14_weapon_object + 696) = *(double *)v169;
+    if ( !sub_440250("success_probability", v169) )
+      *(float *)(v14_weapon_object + 700) = *(double *)v169;
+    if ( !sub_440250("damage", v169) )
+      *(float *)(v14_weapon_object + 700) = *(double *)v169;
+    std::string::string(v180, "affect_vehicles");
+    v200 = 23;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 704));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "affect_characters");
+    v200 = 24;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 705));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "carry_in_two_hands");
+    v200 = 25;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 600));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "cover_deployment");
+    v200 = 26;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 693));
+    v200 = -1;
+    std::string::~string(v180);
+    std::string::string(v180, "deployment");
+    v200 = 27;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 693));
+    v200 = -1;
+    std::string::~string(v180);
+    if ( !sub_440250("sight_height_offset", v169) )
+      *(float *)(v14_weapon_object + 864) = *(double *)v169;
+    std::string::string(v180, "stab_enabled");
+    v200 = 28;
+    sub_41D1F0(specification, (int)v180, (bool *)(v14_weapon_object + 1072));
+    v200 = -1;
+    std::string::~string(v180);
+    if ( !sub_440250("stab_range", v169) )
+      *(float *)(v14_weapon_object + 1076) = *(double *)v169;
+    if ( !sub_440250("cooldown_start", v169) )
+      *(float *)(v14_weapon_object + 1216) = *(double *)v169;
+    if ( !sub_440250("cooldown_end", v169) )
+      *(float *)(v14_weapon_object + 1220) = *(double *)v169;
+    std::ostringstream::ostringstream(X, 2, 1);
+    HIDWORD(v159) = "weapon:";
+    LODWORD(v159) = X;
+    v200 = 29;
+    log(v159);
+    std::operator<<<char>(v18, v14_weapon_object + 192);
+    std::string::string(v180, &unk_87E6C3);
+    LOBYTE(v200) = 30;
+    v19 = std::ostringstream::str(X, v176);
+    LOBYTE(v200) = 31;
+    sub_41C780(v180, v19);
+    LOBYTE(v200) = 30;
+    std::string::~string(v176);
+    LOBYTE(v200) = 29;
+    std::string::~string(v180);
+    v200 = -1;
+    std::ostringstream::`vbase destructor(X);
+  }
+  v20 = LODWORD(v177);
+  if ( !sub_440250("ai_max_distance_to_shoot", v169) )
+    *(float *)(v14_weapon_object + 1104) = *(double *)v169;
+  std::string::string(v180, "ballistics");
+  v200 = 32;
+  v21 = sub_525380(v20, v180);
+  v200 = -1;
+  std::string::~string(v180);
+  if ( v21 )
+  {
+    sub_526DE0(v21, v14_weapon_object + 612);
+    *(_DWORD *)(v14_weapon_object + 604) = 1;
+  }
+  if ( xml_has_tag((_DWORD *)LODWORD(v177), "animation") )
+  {
+    has_tag = xml_has_tag((_DWORD *)LODWORD(v177), "animation");
+    v23 = (*(int (__thiscall **)(int))(*(_DWORD *)has_tag + 20))(has_tag);
+    if ( v23 )
+    {
+      while ( 1 )
+      {
+        std::string::string(v194, "key");
+        v200 = 33;
+        sub_41D3E0((int)v182, v23, (int)v194);
+        LOBYTE(v200) = 35;
+        std::string::~string(v194);
+        if ( (unsigned __int8)std::operator==<char>(v182, &unk_87E6C3) )
+        {
+          std::string::string(v186, "state_key");
+          LOBYTE(v200) = 36;
+          v24 = sub_41D3E0((int)v176, v23, (int)v186);
+          LOBYTE(v200) = 37;
+          std::string::operator=(v182, v24);
+          LOBYTE(v200) = 36;
+          std::string::~string(v176);
+          LOBYTE(v200) = 35;
+          std::string::~string(v186);
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "recoil") )
+        {
+          LODWORD(v174) = 1;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "cycle") )
+        {
+          LODWORD(v174) = 0;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "reload") )
+        {
+          LODWORD(v174) = 2;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "hold") )
+        {
+          LODWORD(v174) = 3;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "hold_on_wall") )
+        {
+          LODWORD(v174) = 4;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "still_against_wall") )
+        {
+          LODWORD(v174) = 5;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "running") )
+        {
+          LODWORD(v174) = 6;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "crouching") )
+        {
+          LODWORD(v174) = 7;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "walking") )
+        {
+          LODWORD(v174) = 8;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "walking_backwards") )
+        {
+          LODWORD(v174) = 9;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "crouch_moving") )
+        {
+          LODWORD(v174) = 10;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "crouch_moving_backwards") )
+        {
+          LODWORD(v174) = 11;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "changing_weapon_out") )
+        {
+          LODWORD(v174) = 13;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "changing_weapon_in") )
+        {
+          LODWORD(v174) = 12;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "hold_casual") )
+        {
+          LODWORD(v174) = 14;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "celebrate_shoot") )
+        {
+          LODWORD(v174) = 15;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "prone_still") )
+        {
+          LODWORD(v174) = 16;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "prone_moving") )
+        {
+          LODWORD(v174) = 17;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "stabbing") )
+        {
+          LODWORD(v174) = 18;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "ending_climbing_up_ladder") )
+        {
+          LODWORD(v174) = 19;
+          goto LABEL_69;
+        }
+        if ( (unsigned __int8)std::operator==<char>(v182, "next_in_chain_in") )
+          break;
+        v25 = std::operator==<char>(v182, "next_in_chain_out");
+        LODWORD(v174) = v25 != 0 ? 20 : -1;
+        if ( (v25 != 0 ? 0x15 : 0) != 0 )
+          goto LABEL_69;
+        std::ostringstream::ostringstream(X, 2, 1);
+        HIDWORD(v156) = "WARNING, invalid key = ";
+        LODWORD(v156) = X;
+        LOBYTE(v200) = 38;
+        log(v156);
+        v162 = COERCE_DOUBLE(__PAIR64__(", skipped", std::operator<<<char>(v26, v182)));
+        log(v162);
+        std::string::string(v186, &unk_87E6C3);
+        LOBYTE(v200) = 39;
+        v27 = std::ostringstream::str(X, v176);
+        LOBYTE(v200) = 40;
+        sub_41C780(v186, v27);
+        LOBYTE(v200) = 39;
+        std::string::~string(v176);
+        LOBYTE(v200) = 38;
+        std::string::~string(v186);
+        LOBYTE(v200) = 35;
+        std::ostringstream::`vbase destructor(X);
+LABEL_123:
+        v200 = -1;
+        std::string::~string(v182);
+        v23 = sub_43F7D0((int)"animation");
+        if ( !v23 )
+          goto LABEL_124;
+      }
+      LODWORD(v174) = 21;
+LABEL_69:
+      std::string::string(v187, "stance_key");
+      LOBYTE(v200) = 41;
+      sub_41D3E0((int)v180, v23, (int)v187);
+      LOBYTE(v200) = 43;
+      std::string::~string(v187);
+      if ( v181 )
+      {
+        LODWORD(v173) = sub_749420(v180);
+        v169[0] = -1;
+        sub_440210((int)"ref", (int)v169);
+        if ( v169[0] != -1 )
+        {
+          sub_4F9310(&v173);
+          sub_4E6690(&v174);
+          sub_4263C0(v169);
+          goto LABEL_122;
+        }
+        std::string::string(v176, "animation_key");
+        LOBYTE(v200) = 47;
+        sub_41D3E0((int)v186, v23, (int)v176);
+        LOBYTE(v200) = 49;
+        std::string::~string(v176);
+        if ( (unsigned __int8)std::operator!=<char>(v186, &unk_87E6C3) )
+        {
+          sub_74C730(&v173);
+          sub_74BCF0(&v174);
+          sub_418A60(v186);
+        }
+      }
+      else
+      {
+        LODWORD(v173) = -1;
+        sub_440210((int)"ref", (int)&v173);
+        if ( LODWORD(v173) != -1 )
+        {
+          sub_4E6690(&v174);
+          sub_4263C0(&v173);
+LABEL_122:
+          LOBYTE(v200) = 35;
+          std::string::~string(v180);
+          goto LABEL_123;
+        }
+        std::string::string(v176, "animation_key");
+        LOBYTE(v200) = 44;
+        sub_41D3E0((int)v186, v23, (int)v176);
+        LOBYTE(v200) = 46;
+        std::string::~string(v176);
+        if ( (unsigned __int8)std::operator!=<char>(v186, &unk_87E6C3) )
+        {
+          sub_74BCF0(&v174);
+          sub_418A60(v186);
+        }
+      }
+      LOBYTE(v200) = 43;
+      std::string::~string(v186);
+      goto LABEL_122;
+    }
+  }
+LABEL_124:
+  for ( i = read_from_xml((_DWORD *)LODWORD(v177), "stance"); i; i = sub_43F7D0((int)"stance") )
+  {
+    std::string::string(v176, "state_key");
+    v200 = 50;
+    sub_41D3E0((int)v180, i, (int)v176);
+    LOBYTE(v200) = 52;
+    std::string::~string(v176);
+    v29 = sub_749420(v180);
+    v169[0] = v29;
+    *(float *)&v174 = *(float *)sub_5061A0(v169);
+    if ( !sub_440250("accuracy", &v173) )
+      *(float *)&v174 = v173;
+    v30 = (float *)sub_5061A0(v169);
+    *v30 = *(float *)&v174;
+    if ( !v29 )
+    {
+      v169[0] = 7;
+      if ( *(float *)sub_5061A0(v169) == 0.8500000238418579 )
+      {
+        v169[0] = 7;
+        v31 = (float *)sub_5061A0(v169);
+        *v31 = *(float *)&v174;
+      }
+    }
+    std::ostringstream::ostringstream(X, 2, 1);
+    v164 = *(float *)&v174;
+    HIDWORD(v154) = "stance ";
+    LODWORD(v154) = X;
+    LOBYTE(v200) = 53;
+    log(v154);
+    v155 = COERCE_DOUBLE(__PAIR64__(&word_87F354, std::ostream::operator<<(v32, v29)));
+    log(v155);
+    v160 = COERCE_DOUBLE(__PAIR64__(", accuracy = ", std::operator<<<char>(v33, v180)));
+    log(v160);
+    std::ostream::operator<<(v34, LODWORD(v164));
+    std::string::string(v187, &unk_87E6C3);
+    LOBYTE(v200) = 54;
+    v35 = std::ostringstream::str(X, v194);
+    LOBYTE(v200) = 55;
+    sub_41C850(v187, v35);
+    LOBYTE(v200) = 54;
+    std::string::~string(v194);
+    LOBYTE(v200) = 53;
+    std::string::~string(v187);
+    LOBYTE(v200) = 52;
+    std::ostringstream::`vbase destructor(X);
+    v200 = -1;
+    std::string::~string(v180);
+  }
+  v36 = (_DWORD *)LODWORD(v177);
+  v37 = xml_has_tag((_DWORD *)LODWORD(v177), "model");
+  v38 = v175_this;
+  sub_525C40(*v175_this, v37, v14_weapon_object + 712, v14_weapon_object + 740);
+  std::string::string(v176, &unk_87E6C3);
+  v200 = 56;
+  std::string::string(v187, v176);
+  v188 = 0.0;
+  v189 = 0.0;
+  v200 = -1;
+  v190 = 1.0;
+  v191 = 1.0;
+  v192 = 1.0;
+  v193 = 1.0;
+  std::string::~string(v176);
+  v200 = 57;
+  v39 = xml_has_tag(v36, "addon_model");
+  sub_525C40(*v38, v39, v14_weapon_object + 792, v187);
+  v200 = -1;
+  std::string::~string(v187);
+  sub_5299A0(*v38, (int)v36, v14_weapon_object + 112);
+  sub_4CD7C0(v182, *(_DWORD *)(v14_weapon_object + 388));
+  v40 = *out_weapon_object;
+  v41 = (v184 - (int)v183) >> 2;
+  v200 = 58;
+  LODWORD(v174) = v40;
+  LODWORD(v173) = 0;
+  if ( v41 )
+  {
+    v169[0] = v41 - 1;
+    v42 = *(_DWORD *)sub_4B6530(v41 - 1);
+    if ( v42 == LODWORD(v174) )
+    {
+      if ( --v169[0] < 0 )
+        goto LABEL_137;
+      v42 = *(_DWORD *)sub_4B6530(v169[0]);
+    }
+    if ( v42 )
+      LODWORD(v173) = v42 + 100;
+  }
+LABEL_137:
+  v165 = LODWORD(v173);
+  v43 = read_from_xml(v36, "commonness");
+  read_commonness(v43, v14_weapon_object + 100, v165);
+  v200 = -1;
+  if ( v183 )
+    operator delete(v183);
+  v183 = 0;
+  v184 = 0;
+  v185 = 0;
+  operator delete(v182[0]);
+  sub_52B900(*v38, v36, v14_weapon_object + 192);
+  sub_526C90((int)v36, v14_weapon_object + 396);
+  sub_52B400(v36, (int *)(v14_weapon_object + 424));
+  sub_52C2D0(v36, (_DWORD *)(*out_weapon_object + 924));
+  std::string::string(v176, "transform_on_consume");
+  v166 = *out_weapon_object + 1036;
+  v200 = 59;
+  sub_41D480((int)v36, (int)v176, v166);
+  v200 = -1;
+  std::string::~string(v176);
+  v169[0] = read_from_xml(v36, "next_in_chain");
+  if ( v169[0] )
+  {
+    std::string::string(v176, "key");
+    v167 = *out_weapon_object + 0x488;
+    v200 = 60;
+    sub_41D480(v169[0], (int)v176, v167);
+    v200 = -1;
+    std::string::~string(v176);
+    sub_440210((int)"share_ammo", *out_weapon_object + 1192);
+  }
+  v169[0] = *out_weapon_object + 1196;
+  if ( !sub_440250("ai_burst_time", &v173) )
+    *(float *)v169[0] = v173;
+  v169[0] = *out_weapon_object + 1200;
+  if ( !sub_440250("ai_burst_time_variance", &v173) )
+    *(float *)v169[0] = v173;
+  v169[0] = *out_weapon_object + 1204;
+  if ( !sub_440250("ai_burst_wait_time", &v173) )
+    *(float *)v169[0] = v173;
+  v169[0] = *out_weapon_object + 1208;
+  if ( !sub_440250("ai_burst_wait_time_variance", &v173) )
+    *(float *)v169[0] = v173;
+  std::string::string(v176, "ai_stand_manually_to_shoot_over_wall");
+  v168 = (bool *)(*out_weapon_object + 1212);
+  v200 = 61;
+  sub_41D1F0((int)v36, (int)v176, v168);
+  v200 = -1;
+  std::string::~string(v176);
+  if ( xml_has_tag(v36, "projectiles_per_shot") )
+  {
+    v44 = xml_has_tag(v36, "projectiles_per_shot");
+    (*(void (__thiscall **)(int))(*(_DWORD *)v44 + 20))(v44);
+    sub_440210((int)"value", v14_weapon_object + 844);
+  }
+  if ( !v172 )
+  {
+    if ( xml_has_tag(v36, "projectile") )
+    {
+      v45 = xml_has_tag(v36, "projectile");
+      v169[0] = (*(int (__thiscall **)(int))(*(_DWORD *)v45 + 20))(v45);
+      if ( v169[0] )
+      {
+        unknown_libname_4(&v173);
+        v46 = *v38;
+        v200 = 62;
+        sub_541E40(v46);
+        ((void (__stdcall *)(int, _DWORD))sub_752180)(v169[0], *out_weapon_object);
+        if ( *(_DWORD *)(*out_weapon_object + 604) == 1 && sub_742240(*out_weapon_object) )
+          *(float *)(*out_weapon_object + 636) = -*(float *)(sub_742240(*out_weapon_object) + 172);
+        v200 = -1;
+        nullsub_4(&v173);
+      }
+    }
+  }
+  if ( xml_has_tag(v36, "weak_hand_hold") )
+  {
+    v47 = xml_has_tag(v36, "weak_hand_hold");
+    (*(void (__thiscall **)(int))(*(_DWORD *)v47 + 20))(v47);
+    if ( !sub_440250("offset", v169) )
+      *(float *)(v14_weapon_object + 848) = *(double *)v169;
+  }
+  for ( j = read_from_xml(v36, "shield"); j; j = sub_43F7D0((int)"shield") )
+  {
+    sub_548400(X);
+    v200 = 63;
+    sub_526670(j, X);
+    sub_74B4A0(X);
+    v200 = -1;
+    sub_4AB340(X);
+  }
+  v172 = 0;
+  if ( xml_has_tag(v36, "sound") )
+  {
+    v49 = xml_has_tag((_DWORD *)LODWORD(v177), "sound");
+    v50 = (*(int (__thiscall **)(int))(*(_DWORD *)v49 + 20))(v49);
+    if ( !v50 )
+      goto LABEL_385;
+    v51 = (unsigned __int8 (__cdecl *)(void **, const char *))std::operator==<char>;
+    do
+    {
+      std::string::string(v186, "operation");
+      v200 = 64;
+      if ( sub_4401A0("class") )
+      {
+        std::string::string(v176, "class");
+        LOBYTE(v200) = 65;
+        v52 = sub_41D3E0((int)v187, v50, (int)v176);
+        LOBYTE(v200) = 66;
+        std::string::operator=(v186, v52);
+        LOBYTE(v200) = 65;
+        std::string::~string(v187);
+        LOBYTE(v200) = 64;
+        std::string::~string(v176);
+      }
+      if ( v51((void **)v186, "operation") )
+      {
+        std::string::string(v176, "key");
+        LOBYTE(v200) = 67;
+        sub_41D3E0((int)v182, v50, (int)v176);
+        LOBYTE(v200) = 69;
+        std::string::~string(v176);
+        std::string::string(v187, &unk_87E6C3);
+        LOBYTE(v200) = 70;
+        get_filename((int)v194, v50, (int)v187);
+        LOBYTE(v200) = 72;
+        std::string::~string(v187);
+        if ( v51(v182, "fire") )
+        {
+          v53 = 1;
+        }
+        else if ( v51(v182, "cycle") )
+        {
+          v53 = 0;
+        }
+        else if ( v51(v182, "magazine_in") )
+        {
+          v53 = 2;
+        }
+        else if ( v51(v182, "magazine_out") )
+        {
+          v53 = 3;
+        }
+        else if ( v51(v182, "cycle_in") )
+        {
+          v53 = 5;
+        }
+        else if ( v51(v182, "cycle_out") )
+        {
+          v53 = 6;
+        }
+        else if ( v51(v182, "reload_one") )
+        {
+          v53 = 4;
+        }
+        else if ( v51(v182, "stab") )
+        {
+          v53 = 8;
+        }
+        else if ( v51(v182, "stab_hit") )
+        {
+          v53 = 10;
+        }
+        else if ( v51(v182, "stab_hit_kill") )
+        {
+          v53 = 10;
+        }
+        else if ( v51(v182, "stab_hit_any") )
+        {
+          v53 = 7;
+        }
+        else if ( v51(v182, "effect") )
+        {
+          v53 = 9;
+        }
+        else if ( v51(v182, "dry_fire") )
+        {
+          v53 = 11;
+        }
+        else
+        {
+          v53 = v51(v182, "last_ammo") != 0 ? 12 : 1;
+        }
+        v54 = *v175_this;
+        v170 = -1.0;
+        v169[1] = -1;
+        v171 = 1.0;
+        v169[0] = v53;
+        v55 = (int *)sub_4AC140(v54);
+        v56 = *v55;
+        v57 = sub_5253B0(v50, 0);
+        v169[1] = (*(int (__thiscall **)(int *, char *, int))(v56 + 24))(v55, v194, v57);
+        sub_5252A0(v50, v169);
+        sub_557000(v169);
+        LOBYTE(v200) = 69;
+        std::string::~string(v194);
+        LOBYTE(v200) = 64;
+        std::string::~string(v182);
+        v51 = (unsigned __int8 (__cdecl *)(void **, const char *))std::operator==<char>;
+      }
+      else if ( v51((void **)v186, "ricochet") )
+      {
+        v172 = 1;
+      }
+      v200 = -1;
+      std::string::~string(v186);
+      v50 = sub_43F7D0((int)"sound");
+    }
+    while ( v50 );
+    if ( v172 )
+    {
+      if ( (unsigned __int8)sub_742150(v14_weapon_object) )
+      {
+        v58 = v175_this;
+        v59 = sub_4AC140(*v175_this);
+        sub_52A040(*v58, LODWORD(v177), *(_DWORD *)(v14_weapon_object + 644) + 204, v59);
+      }
+    }
+    else
+    {
+LABEL_385:
+      if ( (unsigned __int8)sub_742150(v14_weapon_object) && *(_DWORD *)(*(_DWORD *)(v14_weapon_object + 644) + 232) )
+        v172 = 1;
+    }
+  }
+  if ( xml_has_tag((_DWORD *)LODWORD(v177), "effect") )
+  {
+    v60 = xml_has_tag((_DWORD *)LODWORD(v177), "effect");
+    for ( k = (*(int (__thiscall **)(int))(*(_DWORD *)v60 + 20))(v60); k; k = sub_43F7D0((int)"effect") )
+    {
+      std::string::string(v176, "class");
+      v200 = 73;
+      sub_41D3E0((int)v180, k, (int)v176);
+      LOBYTE(v200) = 75;
+      std::string::~string(v176);
+      if ( (unsigned __int8)std::operator==<char>(v180, "ricochet") )
+      {
+        if ( (unsigned __int8)sub_742150(v14_weapon_object) )
+        {
+          v62 = *v175_this;
+          v63 = sub_4AC120(*v175_this);
+          sub_52A470(v62, k, *(_DWORD *)(v14_weapon_object + 644) + 236, v63);
+        }
+      }
+      else if ( (unsigned __int8)std::operator==<char>(v180, "muzzle") )
+      {
+        std::string::string(v187, "ref");
+        LOBYTE(v200) = 76;
+        sub_41D3E0((int)v194, k, (int)v187);
+        LOBYTE(v200) = 78;
+        std::string::~string(v187);
+        sub_742130(v169);
+        v64 = (int *)sub_4AC120(*v175_this);
+        v65 = *v64;
+        v66 = sub_422920(1, 0, 0);
+        v169[0] = (*(int (__thiscall **)(int *, char *, int))(v65 + 44))(v64, v194, v66);
+        sub_7425C0(v169);
+        LOBYTE(v200) = 75;
+        std::string::~string(v194);
+      }
+      v200 = -1;
+      std::string::~string(v180);
+    }
+  }
+  v67 = (_DWORD *)LODWORD(v177);
+  for ( m = read_from_xml((_DWORD *)LODWORD(v177), "reward"); m; m = sub_43F7D0((int)"reward") )
+    sub_525870(v14_weapon_object + 1080, m);
+  if ( read_from_xml(v67, "target_factors") )
+  {
+    for ( n = read_from_xml(v67, "target_factors"); n; n = sub_43F7D0((int)"target_factors") )
+    {
+      sub_7421F0(v194);
+      v200 = 79;
+      std::string::string(v176, "tag");
+      LOBYTE(v200) = 80;
+      v70 = sub_41D3E0((int)v187, n, (int)v176);
+      LOBYTE(v200) = 81;
+      std::string::operator=(v194, v70);
+      LOBYTE(v200) = 80;
+      std::string::~string(v187);
+      LOBYTE(v200) = 79;
+      std::string::~string(v176);
+      if ( (unsigned __int8)std::operator!=<char>(v194, &unk_87E6C3) )
+        LODWORD(v195) = sub_4C1520(v194);
+      if ( !sub_440250("distance", v169) )
+        v196 = *(double *)v169;
+      if ( !sub_440250("direction", &v173) )
+        v197 = v173;
+      if ( !sub_440250("squad_command", &v177) )
+        v198 = v177;
+      if ( !sub_440250("base_score", &v174) )
+        v199 = v174;
+      sub_74B550(v194);
+      v200 = -1;
+      std::string::~string(v194);
+    }
+  }
+  result = std::operator!=<char>(v14_weapon_object + 396, &unk_87E6C3);
+  if ( (_BYTE)result )
+  {
+    v169[0] = 3;
+    if ( sub_7423D0(3) == -1 )
+    {
+      v72 = *(_DWORD *)(v14_weapon_object + 528);
+      v73 = *(_DWORD *)(v14_weapon_object + 504);
+      v74 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v74 || *v74 != v73 )
+        invalid_parameter_noinfo();
+      if ( v74[1] == v72 )
+      {
+        LODWORD(v173) = 1;
+        v169[0] = 3;
+        v75 = (int *)sub_4E6690(v169);
+        v76 = v75[3];
+        if ( v76 )
+          v77 = (int)(v75[5] - v76) >> 2;
+        else
+          v77 = 0;
+        v78 = (_DWORD *)v75[4];
+        if ( (int)((int)v78 - v76) >> 2 >= v77 )
+        {
+          if ( v76 > (unsigned int)v78 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v75, v78, (int)&v173);
+        }
+        else
+        {
+          *v78 = 1;
+          v75[4] = (int)(v78 + 1);
+        }
+      }
+    }
+    v169[0] = 5;
+    if ( sub_7423D0(5) == -1 )
+    {
+      v79 = *(_DWORD *)(v14_weapon_object + 528);
+      v80 = *(_DWORD *)(v14_weapon_object + 504);
+      v81 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v81 || *v81 != v80 )
+        invalid_parameter_noinfo();
+      if ( v81[1] == v79 )
+      {
+        LODWORD(v173) = 15;
+        v169[0] = 5;
+        v82 = (int *)sub_4E6690(v169);
+        v83 = v82[3];
+        if ( v83 )
+          v84 = (int)(v82[5] - v83) >> 2;
+        else
+          v84 = 0;
+        v85 = (_DWORD *)v82[4];
+        if ( (int)((int)v85 - v83) >> 2 >= v84 )
+        {
+          if ( v83 > (unsigned int)v85 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v82, v85, (int)&v173);
+        }
+        else
+        {
+          *v85 = 15;
+          v82[4] = (int)(v85 + 1);
+        }
+      }
+    }
+    v169[0] = 4;
+    if ( sub_7423D0(4) == -1 )
+    {
+      v86 = *(_DWORD *)(v14_weapon_object + 528);
+      v87 = *(_DWORD *)(v14_weapon_object + 504);
+      v88 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v88 || *v88 != v87 )
+        invalid_parameter_noinfo();
+      if ( v88[1] == v86 )
+      {
+        LODWORD(v173) = 1;
+        v169[0] = 4;
+        v89 = (int *)sub_4E6690(v169);
+        v90 = v89[3];
+        if ( v90 )
+          v91 = (int)(v89[5] - v90) >> 2;
+        else
+          v91 = 0;
+        v92 = (_DWORD *)v89[4];
+        if ( (int)((int)v92 - v90) >> 2 >= v91 )
+        {
+          if ( v90 > (unsigned int)v92 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v89, v92, (int)&v173);
+        }
+        else
+        {
+          *v92 = 1;
+          v89[4] = (int)(v92 + 1);
+        }
+      }
+    }
+    v169[0] = 14;
+    if ( sub_7423D0(14) == -1 )
+    {
+      v93 = *(_DWORD *)(v14_weapon_object + 528);
+      v94 = *(_DWORD *)(v14_weapon_object + 504);
+      v95 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v95 || *v95 != v94 )
+        invalid_parameter_noinfo();
+      if ( v95[1] == v93 )
+      {
+        LODWORD(v173) = 32;
+        v169[0] = 14;
+        v96 = (int *)sub_4E6690(v169);
+        v97 = v96[3];
+        if ( v97 )
+          v98 = (int)(v96[5] - v97) >> 2;
+        else
+          v98 = 0;
+        v99 = (_DWORD *)v96[4];
+        if ( (int)((int)v99 - v97) >> 2 >= v98 )
+        {
+          if ( v97 > (unsigned int)v99 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v96, v99, (int)&v173);
+        }
+        else
+        {
+          *v99 = 32;
+          v96[4] = (int)(v99 + 1);
+        }
+      }
+    }
+    v169[0] = 6;
+    if ( sub_7423D0(6) == -1 )
+    {
+      v100 = *(_DWORD *)(v14_weapon_object + 528);
+      v101 = *(_DWORD *)(v14_weapon_object + 504);
+      v102 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v102 || *v102 != v101 )
+        invalid_parameter_noinfo();
+      if ( v102[1] == v100 )
+      {
+        LODWORD(v173) = 2;
+        v169[0] = 6;
+        v103 = (int *)sub_4E6690(v169);
+        v104 = v103[3];
+        if ( v104 )
+          v105 = (int)(v103[5] - v104) >> 2;
+        else
+          v105 = 0;
+        v106 = (_DWORD *)v103[4];
+        if ( (int)((int)v106 - v104) >> 2 >= v105 )
+        {
+          if ( v104 > (unsigned int)v106 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v103, v106, (int)&v173);
+        }
+        else
+        {
+          *v106 = 2;
+          v103[4] = (int)(v106 + 1);
+        }
+      }
+    }
+    v169[0] = 7;
+    if ( sub_7423D0(7) == -1 )
+    {
+      v107 = *(_DWORD *)(v14_weapon_object + 528);
+      v108 = *(_DWORD *)(v14_weapon_object + 504);
+      v109 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v109 || *v109 != v108 )
+        invalid_parameter_noinfo();
+      if ( v109[1] == v107 )
+      {
+        LODWORD(v173) = 3;
+        v169[0] = 7;
+        v110 = (int *)sub_4E6690(v169);
+        v111 = v110[3];
+        if ( v111 )
+          v112 = (int)(v110[5] - v111) >> 2;
+        else
+          v112 = 0;
+        v113 = (_DWORD *)v110[4];
+        if ( (int)((int)v113 - v111) >> 2 >= v112 )
+        {
+          if ( v111 > (unsigned int)v113 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v110, v113, (int)&v173);
+        }
+        else
+        {
+          *v113 = 3;
+          v110[4] = (int)(v113 + 1);
+        }
+      }
+    }
+    v169[0] = 8;
+    if ( sub_7423D0(8) == -1 )
+    {
+      v114 = *(_DWORD *)(v14_weapon_object + 528);
+      v115 = *(_DWORD *)(v14_weapon_object + 504);
+      v116 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v116 || *v116 != v115 )
+        invalid_parameter_noinfo();
+      if ( v116[1] == v114 )
+      {
+        LODWORD(v173) = 0;
+        v169[0] = 8;
+        v117 = (int *)sub_4E6690(v169);
+        v118 = v117;
+        v119 = v117[3];
+        if ( v119 )
+          v120 = (int)(v117[5] - v119) >> 2;
+        else
+          v120 = 0;
+        v121 = (_DWORD *)v118[4];
+        if ( (int)((int)v121 - v119) >> 2 >= v120 )
+        {
+          if ( v119 > (unsigned int)v121 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v118, v121, (int)&v173);
+        }
+        else
+        {
+          *v121 = 0;
+          v118[4] = (int)(v121 + 1);
+        }
+      }
+    }
+    v169[0] = 9;
+    if ( sub_7423D0(9) == -1 )
+    {
+      v122 = *(_DWORD *)(v14_weapon_object + 528);
+      v123 = *(_DWORD *)(v14_weapon_object + 504);
+      v124 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v124 || *v124 != v123 )
+        invalid_parameter_noinfo();
+      if ( v124[1] == v122 )
+      {
+        LODWORD(v173) = 4;
+        v169[0] = 9;
+        v125 = (int *)sub_4E6690(v169);
+        v126 = v125[3];
+        if ( v126 )
+          v127 = (int)(v125[5] - v126) >> 2;
+        else
+          v127 = 0;
+        v128 = (_DWORD *)v125[4];
+        if ( (int)((int)v128 - v126) >> 2 >= v127 )
+        {
+          if ( v126 > (unsigned int)v128 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v125, v128, (int)&v173);
+        }
+        else
+        {
+          *v128 = 4;
+          v125[4] = (int)(v128 + 1);
+        }
+      }
+    }
+    v169[0] = 10;
+    if ( sub_7423D0(10) == -1 )
+    {
+      v129 = *(_DWORD *)(v14_weapon_object + 528);
+      v130 = *(_DWORD *)(v14_weapon_object + 504);
+      v131 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v131 || *v131 != v130 )
+        invalid_parameter_noinfo();
+      if ( v131[1] == v129 )
+      {
+        LODWORD(v173) = 20;
+        v169[0] = 10;
+        v132 = (int *)sub_4E6690(v169);
+        v133 = v132[3];
+        if ( v133 )
+          v134 = (int)(v132[5] - v133) >> 2;
+        else
+          v134 = 0;
+        v135 = (_DWORD *)v132[4];
+        if ( (int)((int)v135 - v133) >> 2 >= v134 )
+        {
+          if ( v133 > (unsigned int)v135 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v132, v135, (int)&v173);
+        }
+        else
+        {
+          *v135 = 20;
+          v132[4] = (int)(v135 + 1);
+        }
+      }
+    }
+    v169[0] = 11;
+    if ( sub_7423D0(11) == -1 )
+    {
+      v136 = *(_DWORD *)(v14_weapon_object + 528);
+      v137 = *(_DWORD *)(v14_weapon_object + 504);
+      v138 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v138 || *v138 != v137 )
+        invalid_parameter_noinfo();
+      if ( v138[1] == v136 )
+      {
+        LODWORD(v173) = 21;
+        v169[0] = 11;
+        v139 = (int *)sub_4E6690(v169);
+        v140 = v139[3];
+        if ( v140 )
+          v141 = (int)(v139[5] - v140) >> 2;
+        else
+          v141 = 0;
+        v142 = (_DWORD *)v139[4];
+        if ( (int)((int)v142 - v140) >> 2 >= v141 )
+        {
+          if ( v140 > (unsigned int)v142 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v139, v142, (int)&v173);
+        }
+        else
+        {
+          *v142 = 21;
+          v139[4] = (int)(v142 + 1);
+        }
+      }
+    }
+    v169[0] = 12;
+    if ( sub_7423D0(12) == -1 )
+    {
+      v143 = *(_DWORD *)(v14_weapon_object + 528);
+      v144 = *(_DWORD *)(v14_weapon_object + 504);
+      v145 = (_DWORD *)sub_543D10(&v173, v169);
+      if ( !*v145 || *v145 != v144 )
+        invalid_parameter_noinfo();
+      if ( v145[1] == v143 )
+      {
+        LODWORD(v173) = 56;
+        v169[0] = 12;
+        v146 = (int *)sub_4E6690(v169);
+        v147 = v146[3];
+        if ( v147 )
+          v148 = (int)(v146[5] - v147) >> 2;
+        else
+          v148 = 0;
+        v149 = (_DWORD *)v146[4];
+        if ( (int)((int)v149 - v147) >> 2 >= v148 )
+        {
+          if ( v147 > (unsigned int)v149 )
+            invalid_parameter_noinfo();
+          sub_426280((int)v169, *v146, v149, (int)&v173);
+        }
+        else
+        {
+          *v149 = 56;
+          v146[4] = (int)(v149 + 1);
+        }
+      }
+    }
+    if ( !(unsigned __int8)sub_74A550(v14_weapon_object, 13) )
+    {
+      v169[0] = 41;
+      LODWORD(v173) = 13;
+      sub_4E6690(&v173);
+      sub_4263C0(v169);
+    }
+    if ( !(unsigned __int8)sub_74A550(v14_weapon_object, 16) )
+    {
+      v169[0] = 18;
+      LODWORD(v173) = 16;
+      sub_4E6690(&v173);
+      sub_4263C0(v169);
+    }
+    if ( !(unsigned __int8)sub_74A550(v14_weapon_object, 17) )
+    {
+      v169[0] = 34;
+      LODWORD(v173) = 17;
+      sub_4E6690(&v173);
+      sub_4263C0(v169);
+    }
+    result = sub_74A550(v14_weapon_object, 19);
+    if ( !(_BYTE)result )
+    {
+      v169[0] = 24;
+      LODWORD(v173) = 19;
+      sub_4E6690(&v173);
+      result = sub_4263C0(v169);
+    }
+    if ( !v172 )
+    {
+      v150 = v175_this;
+      v151 = sub_4AC140(*v175_this);
+      sub_7497E0(v151, v14_weapon_object, 0);
+      v152 = sub_4AC140(*v150);
+      sub_7497E0(v152, v14_weapon_object, 1);
+      v153 = sub_4AC140(*v150);
+      return sub_7497E0(v153, v14_weapon_object, 2);
+    }
+  }
+  return result;
+}

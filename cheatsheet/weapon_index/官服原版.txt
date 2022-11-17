@@ -1,0 +1,3 @@
+xm8.weapon 60
+陶式反坦克导弹部署包 61
+hud_stoner_lmg.png 48 15X 

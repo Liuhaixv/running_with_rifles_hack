@@ -34,15 +34,16 @@ int main() {
 	std::cout << "Running with rifles hack" << std::endl;
 
 	bool LSHIFT_pressing = false;
+	int last_aim_status = 0;
 	while (true) {
 		Sleep(2);
+		int current_crosshair_status = client.get_crosshair_status();
 
 		//Trigger Bot
-		if (GetAsyncKeyState(VK_LMENU)) { // Left ALT
-			int crosshair_status = client.get_crosshair_status();
-			std::cout << "crosshair status: " <<  crosshair_status << std::endl;
+		if (GetAsyncKeyState(VK_LMENU)) { // Left ALT			
+			std::cout << "crosshair status: " << current_crosshair_status << std::endl;
 
-			if (crosshair_status == 1) {
+			if (current_crosshair_status == 1) {
 				client.shoot();
 			}
 		}
@@ -52,6 +53,33 @@ int main() {
 			client.teleport_to(client.get_crosshair_position());
 			Sleep(5);
 		}
+
+		//Teleport player to invalid position when dead
+		/*
+		if (last_aim_status != 11 && current_crosshair_status == 11) {
+			//Teleport
+			std::cout << "Player dead, teleporting to invalid position" << std::endl;
+			Point current_point = client.get_current_position();
+			float offset = 100;
+			client.teleport_to(Point{ current_point.x + offset, current_point.z, current_point.y + offset });
+			Sleep(100);
+		}
+		*/
+
+		/**/
+		//random position
+		if (GetAsyncKeyState(VK_SPACE)) {
+			Point current_position = client.get_current_position();
+			client.teleport_to(Point{ current_position.x+ 20 , current_position.z, current_position.y});
+			Sleep(20);
+			client.teleport_to(Point{ current_position.x, current_position.z, current_position.y });
+			Sleep(20);
+			client.teleport_to(Point{ current_position.x - 20 , current_position.z, current_position.y });
+			Sleep(20);
+			client.teleport_to(Point{ current_position.x, current_position.z, current_position.y });
+			Sleep(20);
+		}
+		/**/
 
 		//Change camera view
 		//-0.15 -0.85 0.5
@@ -84,5 +112,7 @@ int main() {
 			}
 
 		}
+
+		last_aim_status = current_crosshair_status;
 	}
 }

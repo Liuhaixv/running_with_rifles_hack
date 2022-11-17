@@ -1,0 +1,5 @@
+BYTE debugmode = this + 3373
+BYTE partial = this + 16
+
+BYTE flip = this + 5272 && flip = flip == 0
+BYTE no_simulation = this + 5456

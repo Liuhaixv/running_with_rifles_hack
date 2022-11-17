@@ -1,0 +1,11 @@
+.text:0069CCD2 8D 56 60                                            lea     edx, [esi+60h]
+.text:0069CCD5 52                                                  push    edx
+.text:0069CCD6 8D 84 24 38 02 00 00                                lea     eax, [esp+29Ch+var_64]
+.text:0069CCDD 50                                                  push    eax
+.text:0069CCDE FF 15 80 B2 ?? 00                                   call    ds:__imp_??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z ; std::operator==<char>(std::string const &,std::string const &)
+.text:0069CCE4 83 C4 08                                            add     esp, 8
+.text:0069CCE7 84 C0                                               test    al, al
+.text:0069CCE9 74 14 
+
+8D ?? ?? ?? 8D ?? ?? ?? ?? ?? ?? ?? FF ?? ?? ?? ?? ?? 83 ?? ?? 84 ?? 74 ??
+8D ?? ?? ?? 8D ?? ?? ?? ?? ?? ?? ?? FF ?? ?? ?? ?? ?? 83 ?? ?? 84 ?? 74 00

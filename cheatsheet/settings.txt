@@ -1,0 +1,2 @@
+music_volume = *((float *)this + 0x22);
+wheel_sensitivity = *((float *)this + 0x2F);
