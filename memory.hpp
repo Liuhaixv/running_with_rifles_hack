@@ -16,7 +16,7 @@ public:
 
 		pID = get_porcId_by_name("rwr_game.exe");
 		if (pID == NULL) {
-			std::cout << "Launch the game before running hack!" << std::endl;
+			std::cout << "Please Launch the game before running this debug tool!" << std::endl;
 			return;
 		}
 		std::cout << pID << std::endl;

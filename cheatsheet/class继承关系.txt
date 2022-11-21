@@ -1,0 +1,5 @@
+_RTDynamicCast(v8, 0, &Character `RTTI Type Descriptor', &Fighter `RTTI Type Descriptor', 0);
+Character - > Fighter
+
+RTDynamicCast(v15, 0, &GameInputHandler `RTTI Type Descriptor', &FighterInputHandler `RTTI Type Descriptor', 0);
+GameInputHandler -> FighterInputHandler

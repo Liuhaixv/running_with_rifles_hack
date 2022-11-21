@@ -1,0 +1,4 @@
+07:25:13 [ INFO] Opening target process: rwr_game.exe
+07:25:13 [ INFO] Starting signature scanning: 1 items
+07:25:13 [ INFO] Found signature: g_pGraphics => 0x4FB4D4
+07:25:13 [ INFO] Finished signature scanning: 1/1 items successful

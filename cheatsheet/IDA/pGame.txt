@@ -1,0 +1,430 @@
+void __thiscall sub_36C50(int this, char *a2, int ArgList, int a4)
+{
+  int *v6; // ecx
+  int *v7; // ecx
+  char *v8; // ecx
+  char *v9; // eax
+  int *v10; // ecx
+  int *v11; // ecx
+  int *user_data; // eax
+  void **v13; // eax
+  char *v14; // eax
+  char *v15; // eax
+  double v16; // st7
+  int *v17; // ecx
+  void *v18; // eax
+  int v19; // eax
+  char v20; // bl
+  int v21; // eax
+  int *v22; // ecx
+  int *v23; // esi
+  FILE *p_Stream; // eax
+  int v25; // eax
+  double v26; // st7
+  _DWORD *v27; // eax
+  _DWORD *v28; // eax
+  _DWORD *i; // esi
+  bool v30; // bl
+  int v31; // eax
+  int *v32; // ecx
+  void *v33; // eax
+  int v34; // eax
+  bool v35; // bl
+  char *v36; // eax
+  _DWORD *v37; // eax
+  char *v38; // eax
+  int v39; // eax
+  bool v40; // bl
+  _DWORD **v41; // eax
+  _DWORD *v42; // eax
+  Ogre::Camera *v43; // eax
+  const struct Ogre::Vector3 *Position; // eax
+  _DWORD **v45; // eax
+  _DWORD *v46; // eax
+  int v47; // eax
+  _DWORD *v48; // eax
+  int v49; // esi
+  int v50; // eax
+  int v51; // eax
+  int v52; // eax
+  int v53; // eax
+  int v54; // eax
+  int v55; // [esp+Ch] [ebp-230h]
+  char *v56; // [esp+18h] [ebp-224h]
+  char *v57; // [esp+18h] [ebp-224h]
+  signed int v58; // [esp+30h] [ebp-20Ch] BYREF
+  char v59[28]; // [esp+34h] [ebp-208h] BYREF
+  int v60; // [esp+50h] [ebp-1ECh] BYREF
+  float v61; // [esp+54h] [ebp-1E8h]
+  float v62; // [esp+58h] [ebp-1E4h]
+  float v63; // [esp+5Ch] [ebp-1E0h] BYREF
+  float v64; // [esp+60h] [ebp-1DCh]
+  float v65; // [esp+64h] [ebp-1D8h]
+  float v66; // [esp+68h] [ebp-1D4h]
+  float v67; // [esp+6Ch] [ebp-1D0h]
+  int v68[6]; // [esp+70h] [ebp-1CCh] BYREF
+  char v69[28]; // [esp+88h] [ebp-1B4h] BYREF
+  int v70[20]; // [esp+A4h] [ebp-198h] BYREF
+  int v71[13]; // [esp+F4h] [ebp-148h] BYREF
+  void *v72; // [esp+128h] [ebp-114h]
+  int v73[13]; // [esp+174h] [ebp-C8h] BYREF
+  void *v74; // [esp+1A8h] [ebp-94h]
+  int v75; // [esp+1BCh] [ebp-80h] BYREF
+  float v76; // [esp+1C0h] [ebp-7Ch]
+  float v77; // [esp+1C4h] [ebp-78h]
+  float v78; // [esp+1C8h] [ebp-74h]
+  float v79; // [esp+1CCh] [ebp-70h]
+  float v80; // [esp+1D0h] [ebp-6Ch]
+  int v81; // [esp+1D8h] [ebp-64h] BYREF
+  FILE *Stream; // [esp+1DCh] [ebp-60h] BYREF
+  int v83; // [esp+1ECh] [ebp-50h]
+  unsigned int v84; // [esp+1F0h] [ebp-4Ch]
+  char v85[28]; // [esp+1F4h] [ebp-48h] BYREF
+  char v86[4]; // [esp+210h] [ebp-2Ch] BYREF
+  void *Src[6]; // [esp+214h] [ebp-28h] BYREF
+  int v88; // [esp+238h] [ebp-4h]
+
+  *&v58 = 0.0;
+  v6 = *(this + 64);
+  if ( !v6 || sub_AC010(v6) || !*(this + 64) || !sub_33420((this + 136), 9u) )
+    return;
+  sub_40590(v73);
+  v88 = 0;
+  XmlElement(v70, "chat_event");
+  LOBYTE(v88) = 1;
+  sub_41710(v70, "player_id", ArgList);
+  std::string::string(v86, &unk_47E6C3);
+  LOBYTE(v88) = 2;
+  if ( ArgList >= 0 )
+  {
+    v7 = *(this + 64);
+    if ( !v7 || sub_AC010(v7) )
+      v8 = 0;
+    else
+      v8 = *(this + 64);
+    v9 = sub_AB940(v8);
+    if ( ArgList < ((*(v9 + 4) - *(v9 + 3)) >> 2) )
+    {
+      v10 = *(this + 64);
+      if ( !v10 || sub_AC010(v10) )
+        v11 = 0;
+      else
+        v11 = *(this + 64);
+      user_data = get_user_data(v11, ArgList);
+      std::string::operator=(v86, user_data + 2);
+    }
+  }
+  v13 = Src[0];
+  if ( Src[5] < 0x10 )
+    v13 = Src;
+  sub_40290(v70, "player_name", v13);
+  if ( *(a2 + 6) < 0x10u )
+    v14 = a2 + 4;
+  else
+    v14 = *(a2 + 1);
+  sub_40290(v70, "message", v14);
+  sub_41710(v70, "global", a4 == 0);
+  if ( a4 )
+  {
+    v15 = "faction";
+    if ( a4 != 1 )
+      v15 = "squad";
+  }
+  else
+  {
+    v15 = "global";
+  }
+  sub_40290(v70, "channel", v15);
+  sub_40060(v73, v70);
+  v16 = (*(*this + 24))(this);
+  std::string::string(v85, a2);
+  LOBYTE(v88) = 3;
+  Ogre::StringUtil::toUpperCase(v85);
+  if ( ArgList )
+    goto LABEL_34;
+  if ( !std::operator==<char>(v85, "/_TEST") )
+  {
+    std::string::string(v59, "/_execute");
+    LOBYTE(v88) = 9;
+    v58 = 1;
+    if ( Ogre::StringUtil::startsWith(v85, v59, 1) )
+    {
+      v20 = 1;
+LABEL_35:
+      v88 = 3;
+      if ( (v58 & 1) != 0 )
+      {
+        v58 &= ~1u;
+        std::string::~string(v59);
+      }
+      if ( v20 )
+      {
+        v21 = *(std::string::string(v59, "/_execute") + 20);
+        LOBYTE(v88) = 10;
+        std::string::substr(v85, &v81, v21 + 1, std::string::npos);
+        LOBYTE(v88) = 12;
+        std::string::~string(v59);
+        unknown_libname_5(&v58);
+        v22 = *(this + 64);
+        LOBYTE(v88) = 13;
+        if ( !v22 || sub_AC010(v22) )
+          v23 = 0;
+        else
+          v23 = *(this + 64);
+        sub_141E40(&v58, v23);
+        sub_40590(v71);
+        p_Stream = Stream;
+        LOBYTE(v88) = 14;
+        if ( v84 < 0x10 )
+          p_Stream = &Stream;
+        if ( sub_41930(v71, p_Stream, 0) )
+        {
+          v25 = sub_3F640(v71, "command");
+          if ( v25 )
+          {
+            v26 = (*(*v25 + 20))(v25);
+            handle_command(&v58, v26, v27, 0);
+          }
+          else
+          {
+            v28 = sub_3F640(v71, "commands");
+            if ( v28 )
+            {
+              for ( i = sub_3F760(v28, "command"); i; i = sub_3F7D0(i, "command") )
+                handle_command(&v58, v16, i, 0);
+            }
+          }
+        }
+        LOBYTE(v88) = 13;
+        v71[0] = &TiXmlDocument::`vftable';
+        if ( v72 != &unk_4F8808 )
+          operator delete[](v72);
+        sub_3FF40(v71);
+        LOBYTE(v88) = 12;
+        nullsub_4();
+        LOBYTE(v88) = 3;
+        std::string::~string(&v81);
+      }
+      else
+      {
+        v30 = 0;
+        if ( !ArgList )
+        {
+          std::string::string(v59, "/_start_script");
+          v58 |= 2u;
+          LOBYTE(v88) = 15;
+          if ( Ogre::StringUtil::startsWith(v85, v59, 1) )
+            v30 = 1;
+        }
+        v88 = 3;
+        if ( (v58 & 2) != 0 )
+        {
+          v58 &= ~2u;
+          std::string::~string(v59);
+        }
+        if ( v30 )
+        {
+          v31 = *(std::string::string(v69, "/_start_script") + 20);
+          LOBYTE(v88) = 16;
+          std::string::substr(v85, &v81, v31 + 1, std::string::npos);
+          LOBYTE(v88) = 18;
+          std::string::~string(v69);
+          Ogre::StringUtil::toLowerCase(&v81);
+          v32 = *(this + 64);
+          if ( v32 )
+            sub_AC010(v32);
+          v33 = sub_AA8B0();
+          sub_13CAD0(&v75, &v81, v33);
+          LOBYTE(v88) = 19;
+          if ( Ogre::StringUtil::endsWith(&v75, &v81, 1) )
+          {
+            v34 = std::string::substr(&v75, v59, 0, LODWORD(v80) - v83 - 1);
+            LOBYTE(v88) = 20;
+            std::string::operator=(&v75, v34);
+            LOBYTE(v88) = 19;
+            std::string::~string(v59);
+          }
+          sub_B64D0(v68);
+          LOBYTE(v88) = 21;
+          std::string::string(v59, "<settings log_level='verbose' />");
+          LOBYTE(v88) = 22;
+          sub_18A60(v68, v59);
+          LOBYTE(v88) = 21;
+          std::string::~string(v59);
+          sub_365E0(this, 2u, v68, &v81, &v75);
+          LOBYTE(v88) = 19;
+          sub_1C980(v68);
+          LOBYTE(v88) = 18;
+          std::string::~string(&v75);
+          LOBYTE(v88) = 3;
+          std::string::~string(&v81);
+        }
+        else
+        {
+          v35 = 0;
+          if ( !ArgList )
+          {
+            std::string::string(&v81, "/_restart_script");
+            v58 |= 4u;
+            LOBYTE(v88) = 23;
+            if ( Ogre::StringUtil::startsWith(v85, &v81, 1)
+              || (std::string::string(v59, "/_rs"), v58 |= 8u, v88 = 24, Ogre::StringUtil::startsWith(v85, v59, 1)) )
+            {
+              v35 = 1;
+            }
+          }
+          v88 = 23;
+          if ( (v58 & 8) != 0 )
+          {
+            v58 &= ~8u;
+            std::string::~string(v59);
+          }
+          v88 = 3;
+          if ( (v58 & 4) != 0 )
+          {
+            v58 &= ~4u;
+            std::string::~string(&v81);
+          }
+          if ( v35 )
+          {
+            v36 = sub_31D30(this);
+            v56 = sub_AA8C0(v36);
+            v37 = sub_31D30(this);
+            sub_DED90(v37, v56);
+            v38 = sub_31D30(this);
+            v57 = sub_AA8C0(v38);
+            v39 = sub_31D30(this);
+            sub_ED280(v39, v57);
+          }
+          else
+          {
+            v40 = 0;
+            if ( !ArgList )
+            {
+              std::string::string(v59, "/_log_camera");
+              v58 |= 0x10u;
+              LOBYTE(v88) = 25;
+              if ( Ogre::StringUtil::startsWith(v85, v59, 1) )
+                v40 = 1;
+            }
+            v88 = 3;
+            if ( (v58 & 0x10) != 0 )
+              std::string::~string(v59);
+            if ( v40 )
+            {
+              v41 = sub_31D30(this);
+              v42 = sub_199D0(v41);
+              v43 = sub_12E5F0(v42);
+              Position = Ogre::Camera::getPosition(v43);
+              v60 = *Position;
+              v61 = *(Position + 1);
+              v62 = *(Position + 2);
+              v45 = sub_31D30(this);
+              v46 = sub_199D0(v45);
+              v47 = sub_12E5F0(v46);
+              Ogre::Camera::getDirection(v47, &v63);
+              *&v58 = v63 * 30.0;
+              v67 = v64 * 30.0;
+              v66 = 30.0 * v65;
+              v75 = v58;
+              v76 = v67;
+              v77 = v66;
+              Ogre::Vector3::operator+(&v60, v68);
+              v75 = v60;
+              v78 = v63;
+              v76 = v61;
+              v79 = v64;
+              v77 = v62;
+              v80 = v65;
+              v48 = sub_31D30(this);
+              sub_C2400(v48, &v75, 500.0, v68, -1.0);
+              std::ostringstream::ostringstream(v71, 2, 1);
+              LOBYTE(v88) = 26;
+              v49 = sub_1D920(v59, v68);
+              LOBYTE(v88) = 27;
+              v55 = sub_1D920(v69, &v60);
+              LOBYTE(v88) = 28;
+              v50 = sub_14240(v71, "camera: position=\"");
+              v51 = std::operator<<<char>(v50, v55);
+              v52 = sub_14240(v51, "\" look_at=\"");
+              v53 = std::operator<<<char>(v52, v49);
+              sub_14240(v53, "\"");
+              LOBYTE(v88) = 27;
+              std::string::~string(v69);
+              LOBYTE(v88) = 26;
+              std::string::~string(v59);
+              std::string::string(v59, &unk_47E6C3);
+              LOBYTE(v88) = 29;
+              v54 = std::ostringstream::str(v71, v69);
+              LOBYTE(v88) = 30;
+              log(v59, v54);
+              LOBYTE(v88) = 29;
+              std::string::~string(v69);
+              LOBYTE(v88) = 26;
+              std::string::~string(v59);
+              LOBYTE(v88) = 3;
+              std::ostringstream::`vbase destructor'(v71);
+            }
+          }
+        }
+      }
+      goto LABEL_84;
+    }
+LABEL_34:
+    v20 = 0;
+    goto LABEL_35;
+  }
+  sub_B64D0(v68);
+  LOBYTE(v88) = 4;
+  std::string::string(v59, "<settings log_level='verbose' />");
+  LOBYTE(v88) = 5;
+  sub_18A60(v68, v59);
+  LOBYTE(v88) = 4;
+  std::string::~string(v59);
+  std::string::string(&v81, "start_tester.as");
+  v17 = *(this + 64);
+  LOBYTE(v88) = 6;
+  if ( v17 )
+    sub_AC010(v17);
+  v18 = sub_AA8B0();
+  sub_13CAD0(&v75, &v81, v18);
+  LOBYTE(v88) = 7;
+  if ( Ogre::StringUtil::endsWith(&v75, &v81, 1) )
+  {
+    v19 = std::string::substr(&v75, v59, 0, LODWORD(v80) - v83 - 1);
+    LOBYTE(v88) = 8;
+    std::string::operator=(&v75, v19);
+    LOBYTE(v88) = 7;
+    std::string::~string(v59);
+  }
+  sub_365E0(this, 2u, v68, &v81, &v75);
+  LOBYTE(v88) = 6;
+  std::string::~string(&v75);
+  LOBYTE(v88) = 4;
+  std::string::~string(&v81);
+  LOBYTE(v88) = 3;
+  sub_1C980(v68);
+LABEL_84:
+  LOBYTE(v88) = 2;
+  std::string::~string(v85);
+  LOBYTE(v88) = 1;
+  std::string::~string(v86);
+  LOBYTE(v88) = 0;
+  sub_416A0(v70);
+  v88 = -1;
+  v73[0] = &TiXmlDocument::`vftable';
+  if ( v74 != &unk_4F8808 )
+    operator delete[](v74);
+  sub_3FF40(v73);
+}
+==========
+Commands::Say + 4 => Game => GUIApplication_c => MetaGameInterfaceAngelScript_18 => 
+
+this
+this + 0x40 = *Game
+========
+
+
+
+rwr_game.exe + 4FB4D4 = Graphics
+this + 0x38 -> GUIApplication

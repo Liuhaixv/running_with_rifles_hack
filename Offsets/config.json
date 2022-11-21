@@ -1,0 +1,16 @@
+{
+    "executable": "rwr_game.exe",
+    "filename": "rwr",
+    "signatures": [
+        {
+            "name": "g_pGraphics",
+            "extra": 0,
+            "relative": true,
+            "module": "rwr_game.exe",
+            "offsets": [
+                2
+            ],
+            "pattern": "8B 0D ? ? ? ? e8 ? ? ? ? dc"
+        }
+    ]
+}

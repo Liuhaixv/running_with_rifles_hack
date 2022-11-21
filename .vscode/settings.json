@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.vehicle": "xml",
+        "iosfwd": "c",
+        "istream": "cpp",
+        "memory": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "xlocnum": "cpp",
+        "xutility": "cpp"
+    }
+}
