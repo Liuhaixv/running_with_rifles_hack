@@ -1,0 +1,13 @@
+show_in_game_view 0
+show_at_screen_edge 2
+show_in_map_view 1
+
+FactionControl::Marker this;
+p = [this + 0x48] + 0x18
+
+*p = p
+p + 4 = 
+*(p+8 )= p
+*(p+12 )= should_show
+*(p+16 )= 0
+*(p+17 )= 0

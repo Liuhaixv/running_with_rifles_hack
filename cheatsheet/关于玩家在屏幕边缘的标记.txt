@@ -1,0 +1,7 @@
+show_at_screen_edge
+
+通过range来定位
+set_marker
+show_in_map_view: 0 or 1
+//图标的图片类型
+atlas_index

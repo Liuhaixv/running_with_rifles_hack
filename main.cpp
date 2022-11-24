@@ -1,7 +1,8 @@
 #pragma once
 #include "client.hpp"
 
-int main() {
+int main()
+{
 
 	/*
 	DWORD pID = NULL; // ID of our Game
@@ -34,37 +35,44 @@ int main() {
 	std::cout << "Running with rifles hack" << std::endl;
 
 	bool LSHIFT_pressing = false;
-	while (true) {
+	while (true)
+	{
 		Sleep(2);
 
-		//Trigger Bot
-		if (GetAsyncKeyState(VK_LMENU)) { // Left ALT
+		// Trigger Bot
+		if (GetAsyncKeyState(VK_LMENU))
+		{ // Left ALT
 			int crosshair_status = client.get_crosshair_status();
-			std::cout << "crosshair status: " <<  crosshair_status << std::endl;
+			std::cout << "crosshair status: " << crosshair_status << std::endl;
 
-			if (crosshair_status == 1) {
+			if (crosshair_status == 1)
+			{
 				client.shoot();
 			}
 		}
 
-		//Teleport
-		if (GetAsyncKeyState(VK_LSHIFT)) {
+		// Teleport
+		if (GetAsyncKeyState(VK_LSHIFT))
+		{
 			client.teleport_to(client.get_crosshair_position());
 			Sleep(5);
 		}
 
-		//Change camera view
+		// Change camera view
 		//-0.15 -0.85 0.5
 		static bool enabled_super_camera_view = false;
-		if (GetAsyncKeyState(VK_INSERT)) {//Insert
-			if (!enabled_super_camera_view) {
-				client.set_camera_angles(Vector3{ 0, -2.2, 0.0000001});
+		if (GetAsyncKeyState(VK_INSERT))
+		{ // Insert
+			if (!enabled_super_camera_view)
+			{
+				client.set_camera_angles(Vector3{0, -2.2, 0.0000001});
 				std::cout << "Setting camera angles to 0,-2.2,0.0000001" << std::endl;
 				enabled_super_camera_view = true;
 			}
-			else {
-				//改为默认相机视角
-				client.set_camera_angles(Vector3{ -0.15, -0.85, 0.5});
+			else
+			{
+				//鏀逛负榛樿鐩告満瑙嗚
+				client.set_camera_angles(Vector3{-0.15, -0.85, 0.5});
 				std::cout << "Setting camera angles to -0.15,-0.85,0.5" << std::endl;
 
 				enabled_super_camera_view = false;
@@ -72,17 +80,20 @@ int main() {
 			Sleep(200);
 		}
 
-		if (enabled_super_camera_view){
-			if (GetAsyncKeyState(VK_PRIOR)) {//PAGE UP key
+		if (enabled_super_camera_view)
+		{
+			if (GetAsyncKeyState(VK_PRIOR))
+			{ // PAGE UP key
 				Vector3 camera_angles = client.get_camera_angles();
-				client.set_camera_angles(Vector3{ camera_angles.a,camera_angles.b -0.05F, camera_angles.c});
-				Sleep(30);
-			}else if (GetAsyncKeyState(VK_NEXT)) {//PAGE DOWN key
-				Vector3 camera_angles = client.get_camera_angles();
-				client.set_camera_angles(Vector3{ camera_angles.a,camera_angles.b + 0.05F, camera_angles.c });
+				client.set_camera_angles(Vector3{camera_angles.a, camera_angles.b - 0.05F, camera_angles.c});
 				Sleep(30);
 			}
-
+			else if (GetAsyncKeyState(VK_NEXT))
+			{ // PAGE DOWN key
+				Vector3 camera_angles = client.get_camera_angles();
+				client.set_camera_angles(Vector3{camera_angles.a, camera_angles.b + 0.05F, camera_angles.c});
+				Sleep(30);
+			}
 		}
 	}
 }
