@@ -1,3 +1,162 @@
+1 CrosshairGood
+2 CrosshairPoor
+3 Crosshair
+4 InventoryViewCursor
+5 InventoryViewCursorDragging
+6 InventoryViewCursorBusy
+7 InventoryViewCursorDraggable
+8 InventoryViewCursorSingle
+9 InventoryViewCursorDraggingSingle
+10 InventoryViewCursorDraggableSingle
+11 CrosshairTimer
+
+
+int __thiscall sub_5402E0(Visual::Crosshair *this, int aim_status)
+{
+  int *v3; // ecx
+  int *v4; // ecx
+  int *v5; // ecx
+  int *v6; // ecx
+  int *v7; // ecx
+  int *v8; // ecx
+  int *v9; // ecx
+  int *v10; // ecx
+  int *v11; // ecx
+  int result; // eax
+  char v13[28]; // [esp+Ch] [ebp-44h] BYREF
+  char v14[28]; // [esp+28h] [ebp-28h] BYREF
+  int v15; // [esp+4Ch] [ebp-4h]
+
+  if ( this->aim_status != aim_status )
+  {
+    if ( aim_status )
+    {
+      if ( aim_status == 1 )
+      {
+        sub_5909D0(this->pintC, 1);
+        std::string::string(v13, "CrosshairGood");
+        v15 = 0;
+        sub_593E20(this->pintC, v13);
+      }
+      else
+      {
+        if ( aim_status != 2 )
+        {
+          switch ( aim_status )
+          {
+            case 3:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "Crosshair");
+              v3 = this->pintC;
+              v15 = 2;
+              sub_593E20(v3, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 4:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "InventoryViewCursor");
+              v4 = this->pintC;
+              v15 = 3;
+              sub_593E20(v4, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 5:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "InventoryViewCursorDragging");
+              v5 = this->pintC;
+              v15 = 4;
+              sub_593E20(v5, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 6:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "InventoryViewCursorBusy");
+              v6 = this->pintC;
+              v15 = 5;
+              sub_593E20(v6, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 7:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "InventoryViewCursorDraggable");
+              v7 = this->pintC;
+              v15 = 6;
+              sub_593E20(v7, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 8:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "InventoryViewCursorSingle");
+              v8 = this->pintC;
+              v15 = 7;
+              sub_593E20(v8, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 9:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "InventoryViewCursorDraggingSingle");
+              v9 = this->pintC;
+              v15 = 8;
+              sub_593E20(v9, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 10:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v13, "InventoryViewCursorDraggableSingle");
+              v10 = this->pintC;
+              v15 = 9;
+              sub_593E20(v10, v13);
+              v15 = -1;
+              std::string::~string(v13);
+              break;
+            case 11:
+              sub_5909D0(this->pintC, 1);
+              std::string::string(v14, "CrosshairTimer");
+              v11 = this->pintC;
+              v15 = 10;
+              sub_593E20(v11, v14);
+              v15 = -1;
+              std::string::~string(v14);
+              break;
+            case 12:
+              sub_5909D0(this->pintC, 0);
+              break;
+            default:
+              goto LABEL_30;
+          }
+          (*(*this->pdword14 + 124))(this->pdword14, 0);
+          goto LABEL_30;
+        }
+        sub_5909D0(this->pintC, 1);
+        std::string::string(v13, "CrosshairPoor");
+        v15 = 1;
+        sub_593E20(this->pintC, v13);
+      }
+      v15 = -1;
+      std::string::~string(v13);
+      (*(*this->pdword14 + 124))(this->pdword14, 1);
+    }
+    else
+    {
+      sub_5909D0(this->pintC, 0);
+      (*(*this->pdword14 + 124))(this->pdword14, 1);
+    }
+LABEL_30:
+    result = sub_594C20();
+    this->aim_status = aim_status;
+  }
+  return result;
+}
+
+
+
 int __thiscall sub_5402E0(Visual::Crosshair *this, int aim_status)
 {
   int *v3; // ecx

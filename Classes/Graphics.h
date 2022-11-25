@@ -8,7 +8,7 @@ class Graphics
 	_BYTE gap0[4];
 	DWORD dword4;
 	int* Ogre$$SceneManager_8;
-	DWORD Ogre$$Win32Window;
+	int* Ogre$$Win32Window;
 	int* Ogre$$Camera;
 	int* Ogre$$Viewport;
 	int* Ogre$$Light;

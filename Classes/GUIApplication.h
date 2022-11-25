@@ -19,6 +19,6 @@ class GUIApplication
 	_BYTE gap7C[256];
 	int AsyncInfoServerAccess;
 	_BYTE gap180[3711];
-	byte gap2;
+	char gap2;
 };
 
