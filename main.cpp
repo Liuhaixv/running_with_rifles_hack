@@ -44,7 +44,7 @@ int main()
 	}
 
 	//"UI"
-	std::cout << "Running with rifles hack\n######################\nCreated by Liuhaixv\n######################\nhttps://github.com/Liuhaixv/running_with_rifles_hack\n######################\n" << std::endl;
+	std::cout << "Running with rifles hack V1.4\n######################\nCreated by Liuhaixv\n######################\nhttps://github.com/Liuhaixv/running_with_rifles_hack\n######################\n" << std::endl;
 
 	bool LSHIFT_pressing = false;
 
