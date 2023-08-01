@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <Windows.h>
 #include<TlHelp32.h>
 #include <iostream>
@@ -16,7 +16,10 @@ public:
 
 		pID = get_porcId_by_name("rwr_game.exe");
 		if (pID == NULL) {
-			std::cout << "Please Launch the game before running this debug tool!" << std::endl;
+			std::cout << "Failed to launch!" << std::endl;
+			std::cout << "Please Launch the game before running the hack!" << std::endl;
+			std::cout << "启动失败!" << std::endl;
+			std::cout << "请先运行游戏再运行辅助!" << std::endl;
 			return;
 		}
 		std::cout << pID << std::endl;
@@ -24,6 +27,7 @@ public:
 		processHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pID);
 		if (processHandle == INVALID_HANDLE_VALUE || processHandle == NULL) { // error handling
 			std::cout << "Failed to open process" << std::endl;
+			std::cout << "无法打开游戏进程" << std::endl;
 			return;
 		}
 
@@ -43,10 +47,10 @@ public:
 		return value;
 	}
 
-	DWORD FindPointer(int offset, DWORD baseaddr, int offsets[])
+	DWORD FindPointer(int offset_num, DWORD baseaddr, int offsets[])
 	{
 		DWORD Address = baseaddr;
-		int total = offset;
+		int total = offset_num;
 		for (int i = 0; i < total; i++) //Loop trough the offsets
 		{
 			ReadProcessMemory(processHandle, (LPCVOID)Address, &Address, sizeof(DWORD), NULL);

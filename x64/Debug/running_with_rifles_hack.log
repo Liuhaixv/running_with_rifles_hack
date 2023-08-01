@@ -1,34 +1,17 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (running_with_rifles_hack.vcxproj, running_with_rifles_hack.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (running_with_rifles_hack.vcxproj, running_with_rifles_hack.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\shared\minwindef.h(156,29): error C2371: 'DWORD': redefinition; different basic types
-H:\Documents\GitHub\running_with_rifles_hack\Classes\Game.h(4): message : see declaration of 'DWORD'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(2865,1): error C2733: '_BitScanForward': you cannot overload a function with 'extern "C"' linkage
-H:\Documents\GitHub\running_with_rifles_hack\predefined C++ types (compiler internal)(287,15): message : see declaration of '_BitScanForward'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(2872,1): error C2733: '_BitScanReverse': you cannot overload a function with 'extern "C"' linkage
-H:\Documents\GitHub\running_with_rifles_hack\predefined C++ types (compiler internal)(288,15): message : see declaration of '_BitScanReverse'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(2879,1): error C2733: '_BitScanForward64': you cannot overload a function with 'extern "C"' linkage
-H:\Documents\GitHub\running_with_rifles_hack\predefined C++ types (compiler internal)(291,15): message : see declaration of '_BitScanForward64'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(2886,1): error C2733: '_BitScanReverse64': you cannot overload a function with 'extern "C"' linkage
-H:\Documents\GitHub\running_with_rifles_hack\predefined C++ types (compiler internal)(292,15): message : see declaration of '_BitScanReverse64'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(3608,6): warning C4391: 'DWORD __segmentlimit(DWORD)': incorrect return type for intrinsic function, expected 'unsigned long'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(3611,9): warning C4391: 'DWORD __segmentlimit(DWORD)': incorrect return type for intrinsic function, expected 'unsigned long'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(3942,6): warning C4391: 'DWORD __readgsdword(DWORD)': incorrect return type for intrinsic function, expected 'unsigned long'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(3979,9): warning C4391: 'DWORD __readgsdword(DWORD)': incorrect return type for intrinsic function, expected 'unsigned long'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\sysinfoapi.h(489,1): error C2733: 'VerSetConditionMask': you cannot overload a function with 'extern "C"' linkage
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\um\winnt.h(21797,1): message : see declaration of 'VerSetConditionMask'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\shared\wtypesbase.h(156,15): error C2371: 'ULONG': redefinition; different basic types
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\shared\minwindef.h(51): message : see declaration of 'ULONG'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\shared\winsmcrd.h(36,15): error C2371: 'ULONG': redefinition; different basic types
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.20348.0\shared\minwindef.h(51): message : see declaration of 'ULONG'
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(81,45): error C2039: 'string_view': is not a member of 'std'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\vector(24): message : see declaration of 'std'
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(81,57): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(81,57): error C2146: syntax error: missing ')' before identifier 'targetProcess'
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(81,57): error C3646: 'targetProcess': unknown override specifier
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(81,70): error C2059: syntax error: ')'
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(17,1): error C2664: 'DWORD Memory::get_porcId_by_name(const int)': cannot convert argument 1 from 'const char [13]' to 'const int'
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(17,28): message : There is no context in which this conversion is possible
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(81,15): message : see declaration of 'Memory::get_porcId_by_name'
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(52,1): warning C4312: 'type cast': conversion from 'DWORD' to 'LPCVOID' of greater size
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(70,1): warning C4311: 'type cast': pointer truncation from 'BYTE *' to 'DWORD'
-H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(92,11): error C2065: 'targetProcess': undeclared identifier
+H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(56,1): warning C4312: 'type cast': conversion from 'DWORD' to 'LPCVOID' of greater size
+H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(74,1): warning C4311: 'type cast': pointer truncation from 'BYTE *' to 'DWORD'
+H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(44,2): warning C4312: 'type cast': conversion from 'DWORD' to 'LPCVOID' of greater size
+H:\Documents\GitHub\running_with_rifles_hack\client.hpp(28,1): message : see reference to function template instantiation 'var Memory::read_mem<int>(DWORD)' being compiled
+          with
+          [
+              var=int
+          ]
+H:\Documents\GitHub\running_with_rifles_hack\memory.hpp(39,2): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+H:\Documents\GitHub\running_with_rifles_hack\client.hpp(59,1): message : see reference to function template instantiation 'bool Memory::write_mem<Vector3>(DWORD,var)' being compiled
+          with
+          [
+              var=Vector3
+          ]
+  running_with_rifles_hack.vcxproj -> H:\Documents\GitHub\running_with_rifles_hack\x64\Debug\running_with_rifles_hack.exe
